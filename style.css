@@ -1814,7 +1814,7 @@ p {
     grid-template-columns:0.8fr 1.5fr;
     grid-template-rows: repeat(1, 1fr);
     column-gap:1vw;
-    padding-top: 8.5rem;
+    padding-top: 0rem;
     padding-left: 0vw;
     bottom:0;
 
@@ -2504,59 +2504,57 @@ p {
 
 
 /*=====footer===*/
-footer{
-    width:100%;
+footer {
+    width: 100%;
+    position: fixed; /* Đặt footer cố định */
+    bottom: 0; /* Gắn footer vào dưới cùng */
+    left: 0;
+    z-index: 0; /* Đảm bảo footer không bị che khuất bởi phần tử khác */
 }
-.stock-ticker{
-    width:100%;
 
-    font-size:15px;
-   
-    overflow:hidden;
-    user-select:none;
-    display:flex;
+.stock-ticker {
+    width: 100%;
+    font-size: 15px;
+    overflow: hidden;
+    user-select: none;
+    display: flex;
 
-    --gap:20px;
+    --gap: 20px;
     background: #ff20e1;
     gap: var(--gap);
-
-    position:relative;
-
-
+    position: relative;
 }
 
-.stock-ticker ul{
-    list-style:none;
-    flex-shrink:0;
-    min-width:100%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+.stock-ticker ul {
+    list-style: none;
+    flex-shrink: 0;
+    min-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     gap: var(--gap);
-    animation:scroll 10s linear infinite;
-
+    animation: scroll 10s linear infinite;
     text-align: center;
-    margin-bottom:-0.2vw;
-
+    margin-bottom: -0.2vw;
 }
 
-@keyframes scroll{
+@keyframes scroll {
     to {
         transform: translateX(calc(-100% - var(--gap)));
     }
 }
-#account{
-    background:none;
-    border:none;
-    padding:2vw;
-    font-size:2rem;
+
+#account {
+    background: none;
+    border: none;
+    padding: 2vw;
+    font-size: 2rem;
     font-style: italic;
     font-weight: bold;
     font-family: mySecondFont;
-    color:#fdff7a;
-
+    color: #fdff7a;
     text-align: center;
-margin-bottom:-1vw;
+    margin-bottom: -1vw;
 }
 
 
