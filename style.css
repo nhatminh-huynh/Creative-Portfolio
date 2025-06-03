@@ -2719,6 +2719,8 @@ left: 0;
     bottom:-1.5vw;
     z-index: -1;
 }
+
+
 #button_melotody{
     position:absolute;
     width:25%;
@@ -2743,6 +2745,8 @@ left: 0;
     top: 50%;
     left:50%;
     transform:translate(-50%,-50%);
+
+    align-items: center;
 }
 
 .item-img img {
@@ -2758,6 +2762,7 @@ left: 0;
 
 .item-img_href{
 
+    max-width: 100vw;
     position:absolute; 
     top: 50%;
     left:50%;
@@ -2765,9 +2770,14 @@ left: 0;
     z-index: -1;
 }
 iframe {
-    transform:scale(1.8);
-    width:100%;
-    height:100%;
+        align-items: center;
+        justify-content: center;
+        justify-items: center;
+    transform:scale(1);
+position:absolute; 
+    top: 50%;
+    left:50%;
+    transform:translate(-50%,-50%);
 }
 
 
