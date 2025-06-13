@@ -159,16 +159,16 @@ function scrollRotate() {
 <!--GALLERY-->
 <div class="description">
 
-  <div class="abstract">
-    <h3><i id="arrow">↘</i> This client solution project focuses on developing an MVP to address the declining public interest in traditional art forms—especially among younger generations—posing a risk to cultural continuity.
+  <div class="abstract fade-up">
+    <h3 class="fade-up"><i id="arrow">↘</i> This client solution project focuses on developing an MVP to address the declining public interest in traditional art forms—especially among younger generations—posing a risk to cultural continuity.
 
 While rich in historical and cultural value, these art forms often lack interactivity and accessibility. To better understand audience needs, we conducted user surveys and used the insights to create an interactive water puppetry show enhanced with hand-tracking technology.
 
 The result is an immersive experience designed to re-engage modern audiences and foster deeper appreciation for Vietnamese traditional arts through active participation.
     <br>🎭🚣🕯️🪕🎋</h3>
-    <h4>Credits</h4>
+    <h4 class="fade-up">Credits</h4>
 
-    <h5> 
+    <h5 class="fade-up"> 
  Scene Direction: Ton Ng, Nhat Minh
   <br>3D Modeling & Texturing: Ton Ng, Nhat Minh
   <br>3D Animation: Ton Ng, Nhat Minh
@@ -183,6 +183,31 @@ The result is an immersive experience designed to re-engage modern audiences and
 </h5>
   </div>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+<script>
+  const fadeUps = document.querySelectorAll('.fade-up');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        anime({
+          targets: entry.target,
+          opacity: [0, 1],
+          translateY: [60, 0],
+          duration: 2000,
+          delay: index * 200, // tạo hiệu ứng delay so le
+          easing: 'easeOutExpo',
+          
+        });
+        
+        observer.unobserve(entry.target); // Chỉ animate 1 lần
+      }
+    });
+  }, {
+    threshold: 0.3
+  });
+  fadeUps.forEach(el => observer.observe(el));
+</script>
 
 
 <div class="containersushiplash">
@@ -190,7 +215,7 @@ The result is an immersive experience designed to re-engage modern audiences and
 <div class="panel" data-color="white">
   <div class="item">
     <div class="item-img">
-       <img  src="img/loading.png" loading="lazy" alt=""/>
+       <img  src="img/loading.webp" alt=""/>
     </div>   
   </div>
 </div>
@@ -198,7 +223,7 @@ The result is an immersive experience designed to re-engage modern audiences and
 <div class="panel" data-color="violet">
   <div class="item">
     <div class="item-img">
-       <img src="img/dragon.png" loading="lazy" alt=""/>
+       <img src="img/dragon.png" alt=""/>
     </div>   
   </div>
 </div>
@@ -216,7 +241,7 @@ The result is an immersive experience designed to re-engage modern audiences and
 <div class="panel" data-color="violet">
   <div class="item">
     <div class="item-img">
-      <img src="img/rối.png" loading="lazy" alt="" />
+      <img src="img/rối.webp" alt="" />
     </div>
       <h4 id="button_name">Puppet Design<h4>
   </div>
@@ -225,7 +250,7 @@ The result is an immersive experience designed to re-engage modern audiences and
 <div class="panel" data-color="white">
   <div class="item">
     <div class="item-img">
-      <img src="img/thuyenrong.png" loading="lazy" alt="" />
+      <img src="img/thuyenrong.webp" alt="" />
     </div>
    <h4 id="button_name">Dragon Boat Design<h4>
   </div>
@@ -234,7 +259,7 @@ The result is an immersive experience designed to re-engage modern audiences and
 <div class="panel" data-color="violet">
   <div class="item">
     <div class="item-img">
-      <img src="img/chua.png" loading="lazy" alt="" />
+      <img src="img/chua.webp"  alt="" />
     </div>
    <h4 id="button_name">Stage Design<h4>
   </div>
@@ -254,7 +279,7 @@ The result is an immersive experience designed to re-engage modern audiences and
 <div class="panel" data-color="violet">
   <div class="item">
     <div class="item-img">
-       <img src="img/Image_Sequence_001_0000.gif" loading="lazy" alt=""/>
+       <img src="img/Image_Sequence_001_0000.gif" alt=""/>
     </div>   
     <h4 id="button_name">Animated in Unity<h4>
   </div>

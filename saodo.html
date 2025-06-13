@@ -159,12 +159,39 @@
 <!--GALLERY-->
 <div class="description">
 
-  <div class="abstract">
-    <h3 id="h3_mannequin"><i id="arrow">↘</i> Since 2022, attending school ceremonies and capturing students’ final moments has deepened my appreciation for school years. These moments reminded me of the Vietnamese saying “Nhất quỷ nhì ma, thứ ba học trò”, which perfectly captures the mischievous and clever spirit of students—much like Quý Ròm, the anti-hero from Kính Vạn Hoa, who is smart, kind, yet always stirring things up with his tricks.
+  <div class="abstract fade-up">
+    <h3 id="h3_mannequin" class="fade-up"><i id="arrow">↘</i> Since 2022, attending school ceremonies and capturing students’ final moments has deepened my appreciation for school years. These moments reminded me of the Vietnamese saying “Nhất quỷ nhì ma, thứ ba học trò”, which perfectly captures the mischievous and clever spirit of students—much like Quý Ròm, the anti-hero from Kính Vạn Hoa, who is smart, kind, yet always stirring things up with his tricks.
 The anti-hero theme drives my character’s design by blending traits of discipline, represented through their “Sao Đỏ” role, with mischief, shown through subtle rebellious acts like selling snacks. This duality reflects the lively reality of school life in Vietnam, where rules and individuality often coexist in unexpected ways. 
     <br>🦹‍♂️🦸‍♂️💵📒🎒</h3>
   </div>
 </div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+<script>
+  const fadeUps = document.querySelectorAll('.fade-up');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        anime({
+          targets: entry.target,
+          opacity: [0, 1],
+          translateY: [60, 0],
+          duration: 2000,
+          delay: index * 200, // tạo hiệu ứng delay so le
+          easing: 'easeOutExpo',
+          
+        });
+        
+        observer.unobserve(entry.target); // Chỉ animate 1 lần
+      }
+    });
+  }, {
+    threshold: 0.3
+  });
+  fadeUps.forEach(el => observer.observe(el));
+</script>
 
 
 <div class="panel" data-color="violet">

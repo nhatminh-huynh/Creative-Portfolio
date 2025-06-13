@@ -161,8 +161,8 @@
       <!--GALLERY-->
       <div class="description">
 
-        <div class="abstract">
-          <h3 id="h3_mannequin"><i id="arrow">↘</i> In 2022, I began learning Blender, which sparked my interest in 3D
+        <div class="abstract fade-up">
+          <h3 id="h3_mannequin" class="fade-up"><i id="arrow">↘</i> In 2022, I began learning Blender, which sparked my interest in 3D
             art and modeling. I'm passionate about creating 3D objects and blending them with 2D art, a technique that
             adds a unique touch and enhances the immersive quality of my work. I've also experimented with animation,
             which I find incredibly intriguing.
@@ -170,6 +170,33 @@
           </h3>
         </div>
       </div>
+
+      
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+<script>
+  const fadeUps = document.querySelectorAll('.fade-up');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        anime({
+          targets: entry.target,
+          opacity: [0, 1],
+          translateY: [60, 0],
+          duration: 2000,
+          delay: index * 200, // tạo hiệu ứng delay so le
+          easing: 'easeOutExpo',
+          
+        });
+        
+        observer.unobserve(entry.target); // Chỉ animate 1 lần
+      }
+    });
+  }, {
+    threshold: 0.3
+  });
+  fadeUps.forEach(el => observer.observe(el));
+</script>
 
 
       <div class="containersushiplash">
@@ -309,7 +336,7 @@
         <div class="panel" data-color="violet">
           <div class="item">
             <div class="item-img">
-              <img src="img/s4045122_A3_Cachet.jpg" alt="" />
+              <img src="img/s4045122_A3_Cachet.webp" alt="" />
             </div>
             <h4 id="button_name">Cachet<h4>
           </div>

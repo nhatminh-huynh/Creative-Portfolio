@@ -154,84 +154,117 @@ function scrollRotate() {
 <!---->
 
 <div class="panel" data-color="indigo">
-  <section class="gridprj">
-    <div class="imgtxt">
+  <section class="gridprj fade-up">
+    <div class="imgtxt fade-up">
       <div id="tooltip">
         <span id="tooltipText">7/2023</span>
-        <img id="image" src="img/image1.png">
+        <img id="image" class="fade-up"src="img/image1.png">
       </div>
-      <a id="txt" href="mannequin.html">prj_mannequin.zip</a>
+      <a id="txt"class="fade-up" href="mannequin.html">prj_mannequin.zip</a>
     </div>
 
-    <div class="imgtxt">
+    <div class="imgtxt fade-up">
       <div id="tooltip">
         <span id="tooltipText">2023-2025</span>
-        <img id="image" src="img/image1.png">
+        <img id="image"class="fade-up" src="img/image1.png">
       </div>
-      <a id="txt" href="3dmodelling.html">3d_modeling.zip</a>
+      <a id="txt"class="fade-up" href="3dmodelling.html">3d_modeling.zip</a>
     </div>
 
-    <div class="imgtxt">
+    <div class="imgtxt fade-up">
       <div id="tooltip">
         <span id="tooltipText">4/2024</span>
-        <img id="image" src="img/image1.png">
+        <img id="image"class="fade-up" src="img/image1.png">
       </div>
-      <a id="txt" href="sushiplash.html">sushi_plash.zip</a>
+      <a id="txt"class="fade-up" href="sushiplash.html">sushi_plash.zip</a>
     </div>
 
-    <div class="imgtxt">
+    <div class="imgtxt fade-up">
       <div id="tooltip">
         <span id="tooltipText">5/2024</span>
-        <img id="image" src="img/image1.png">
+        <img id="image" class="fade-up"src="img/image1.png">
       </div>
-      <a id="txt" href="uxui.html">melôtôdy.zip</a>
+      <a id="txt"class="fade-up" href="uxui.html">melôtôdy.zip</a>
     </div>
 
-    <div class="imgtxt">
+    <div class="imgtxt fade-up">
       <div id="tooltip">
         <span id="tooltipText">12/2024</span>
-        <img id="image" src="img/image1.png">
+        <img id="image" class="fade-up" src="img/image1.png">
       </div>
-      <a id="txt" href="saodo.html">sao_đỏ.zip</a>
+      <a id="txt" class="fade-up" href="saodo.html">sao_đỏ.zip</a>
     </div>
 
-    <div class="imgtxt">
+    <div class="imgtxt fade-up">
       <div id="tooltip">
         <span id="tooltipText">1/2025</span>
-        <img id="image" src="img/image1.png">
+        <img id="image"class="fade-up" src="img/image1.png">
       </div>
-      <a id="txt" href="experimental.html">vj_performances.zip</a>
+      <a id="txt" class="fade-up"href="experimental.html">vj_performances.zip</a>
     </div>
 
-    <div class="imgtxt">
+    <div class="imgtxt fade-up">
       <div id="tooltip">
         <span id="tooltipText">5/2025</span>
-        <img id="image" src="img/image1.png">
+        <img id="image" class="fade-up"src="img/image1.png">
       </div>
-      <a id="txt" href="game.html">nước_mộng.zip</a>
+      <a id="txt"class="fade-up" href="game.html">nước_mộng.zip</a>
     </div>
 
-    <div class="imgtxt">
+    <div class="imgtxt fade-up">
       <div id="tooltip">
         <span id="tooltipText">2025</span>
-        <img id="image" src="img/image1.png">
+        <img id="image" class="fade-up"src="img/image1.png">
       </div>
-      <a id="txt" href="coding.html">generative_coding.zip</a>
+      <a id="txt" class="fade-up"href="coding.html">generative_coding.zip</a>
     </div>
 
-    <div id="word">
-      <div id="intro1">
-        <i id="j1">
-          <span id="gettoknow"><i id="arrow">⤷</i>
+    <div id="word" class="fade-up">
+      <div id="intro1" class="fade-up">
+        <i id="j1" class="fade-up">
+          <span id="gettoknow" class="fade-up"><i id="arrow">⤷</i>
             projects by</span>
         </i>
-        <div id="changetext1">
+        <div id="changetext1" class="fade-up">
           <i id="blur">me:)</i>
         </div>
-        <img src="img/star.gif" id="smallabout1">
+        <img src="img/star.gif" id="smallabout1" class="fade-up">
       </div>
   </section>
 </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+<script>
+  const fadeUps = document.querySelectorAll('.fade-up');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        anime({
+          targets: entry.target,
+          opacity: [0, 1],
+          translateY: [60, 0],
+          duration: 2000,
+          delay: index * 150, // tạo hiệu ứng delay so le
+          easing: 'easeOutExpo',
+            complete: function(anim) {
+    // Xoá inline transform để trả lại quyền cho CSS hover
+    anim.animatables.forEach(a => {
+      a.target.style.transform = '';
+    });}
+          
+        });
+        
+        observer.unobserve(entry.target); // Chỉ animate 1 lần
+      }
+    });
+  }, {
+    threshold: 0.3
+  });
+
+  fadeUps.forEach(el => observer.observe(el));
+</script>
+
 
 
 
@@ -264,35 +297,35 @@ function scrollRotate() {
 <div class="stock-ticker">
   <ul aria-hidden="true">
     <li>
-          <span id="account">@nhetminh</span>
           <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
-          <span id="account">@nhetminh</span>
-      </li>
-      <li>
           <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
-          <span id="account">@nhetminh</span>
           <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
       </li>
       <li>
-          <span id="account">@nhetminh</span>
           <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
-          <span id="account">@nhetminh</span>
+          <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
+          <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
+      </li>
+      <li>
+          <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
+          <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
+          <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
       </li>
   </ul>
   <ul aria-hidden="true">
     <li>
           <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
-          <span id="account">@nhetminh</span>
+          <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
           <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
       </li>
       <li>
-          <span id="account">@nhetminh</span>
           <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
-          <span id="account">@nhetminh</span>
+          <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
+          <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
       </li>
       <li>
           <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
-          <span id="account">@nhetminh</span>
+          <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
           <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
       </li>
   </ul>

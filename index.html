@@ -1,295 +1,313 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NhatMinh's Creative Portfolio</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <link rel="icon" type="image/x-icon" href="img/buttton-green.png">
 
 </head>
+
 <body onload="move('element')">
 
-<!--LOADING PAGE
-<div class="loading-page">
-    <img src="img/keyboard.gif" id="keyboard">
-</div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"
-    integrity="sha512-gmwBmiTVER57N3jYS3LinA9eb8aHrJua5iQD7yqYCKa5x6Jjc7VDVaEA0je0Lu0bP9j7tEjV3+1qUm6loO99Kw=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="./script.js"></script>-->
-
-
-<!--spin on scroll-->
-<div class="wrapper">
-  <div class="circle">
+  <!--spin on scroll-->
+  <div class="wrapper">
+    <div class="circle">
       <img id="reload" src="img/hot-dog_1f32d.webp" alt="scroll">
+    </div>
   </div>
-</div>
-      <div id="fact">-->please hire me<--</div>
+  <div id="fact">-->please hire me<-- </div>
       <script>
-        document.getElementById("reload").onclick = function() {
-            var x = document.getElementById("fact")
-            if(x.style.opacity === "0") {
+        document.getElementById("reload").onclick = function () {
+          var x = document.getElementById("fact")
+          if (x.style.opacity === "0") {
             x.style.opacity = "100";
           }
           else {
             x.style.opacity = "0";
           }
         }
-     </script>
-<script src="main.js"></script>
+      </script>
+      <script src="main.js"></script>
 
-
-<main>
-  <div class="scrollbg">
-    <section>
-      <img src="img/asterisk.webp" id="star4_home">
-    </section>
-    <section>
-      <img src="img/asterisk.webp" id="star5_home">
-    </section>
-    <section>
-      <img src="img/asterisk.webp" id="star6_home">
-    </section>
-    <section>
-      <img src="img/asterisk.webp" id="star7_home">
-    </section>
-    <section>
-      <img src="img/asterisk.webp" id="star8_home">
-    </section>
-    <section>
-      <img src="img/asterisk.webp" id="star9_home">
-    </section>
-  </div>
-  
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
 <script>
-window.onscroll = function () {
-    scrollRotate();
-};
-function scrollRotate() {
-    let image = document.getElementById("reload");
-    image.style.transform = "rotate(" + window.pageYOffset/2 + "deg)";
+  document.getElementById("reload").onclick = function () {
+    var fact = document.getElementById("fact");
+    if (fact.style.opacity === "0" || fact.style.opacity === "") {
+      anime({
+        targets: '#fact',
+        opacity: [0, 1],
+        duration: 500,
+        easing: 'easeInOutQuad'
+      });
+    } else {
+      anime({
+        targets: '#fact',
+        opacity: [1, 0],
+        duration: 500,
+        easing: 'easeInOutQuad'
+      });
+    }
+  };
 
-  let section = document.getElementById("star4_home");
-  section.style.transform = "rotate(" + window.pageYOffset + "deg)";
-
-  let section1 = document.getElementById("star5_home");
-  section1.style.transform = "rotate(" + window.pageYOffset + "deg)";
-
-  let section2 = document.getElementById("star6_home");
-  section2.style.transform = "rotate(" + window.pageYOffset + "deg)";
-
-  let section3 = document.getElementById("star7_home");
-  section3.style.transform = "rotate(" + window.pageYOffset + "deg)";
-
-  let section4 = document.getElementById("star8_home");
-  section4.style.transform = "rotate(" + window.pageYOffset + "deg)";
-
-  let section5 = document.getElementById("star9_home");
-  section5.style.transform = "rotate(" + window.pageYOffset + "deg)";
-
-  let section6 = document.getElementById("star10_home");
-  section6.style.filter = "hue-rotate(" + window.pageYOffset + "deg)";
-}
+  
 </script>
 
 
-<header>
-    <div class="navbar">
-        <div class="logo"><a href="index.html"><img src="img/logo.webp" id="logomeo"></a></div>
-        <!--<a href="#" class="action_btn"></a>
+
+      <main>
+        <div class="scrollbg">
+          <section>
+            <img src="img/asterisk.webp" id="star4_home">
+          </section>
+          <section>
+            <img src="img/asterisk.webp" id="star5_home">
+          </section>
+          <section>
+            <img src="img/asterisk.webp" id="star6_home">
+          </section>
+          <section>
+            <img src="img/asterisk.webp" id="star7_home">
+          </section>
+          <section>
+            <img src="img/asterisk.webp" id="star8_home">
+          </section>
+          <section>
+            <img src="img/asterisk.webp" id="star9_home">
+          </section>
+        </div>
+
+        <script>
+          
+          window.onscroll = function () {
+            scrollRotate();
+          };
+          function scrollRotate() {
+            let image = document.getElementById("reload");
+            image.style.transform = "rotate(" + window.pageYOffset / 2 + "deg)";
+
+            let section = document.getElementById("star4_home");
+            section.style.transform = "rotate(" + window.pageYOffset + "deg)";
+
+            let section1 = document.getElementById("star5_home");
+            section1.style.transform = "rotate(" + window.pageYOffset + "deg)";
+
+            let section2 = document.getElementById("star6_home");
+            section2.style.transform = "rotate(" + window.pageYOffset + "deg)";
+
+            let section3 = document.getElementById("star7_home");
+            section3.style.transform = "rotate(" + window.pageYOffset + "deg)";
+
+            let section4 = document.getElementById("star8_home");
+            section4.style.transform = "rotate(" + window.pageYOffset + "deg)";
+
+            let section5 = document.getElementById("star9_home");
+            section5.style.transform = "rotate(" + window.pageYOffset + "deg)";
+
+            let section6 = document.getElementById("star10_home");
+            section6.style.filter = "hue-rotate(" + window.pageYOffset + "deg)";
+          }
+        </script>
+
+
+
+        <header>
+          <div class="navbar">
+            <div class="logo"><a href="index.html"><img src="img/logo.webp" id="logomeo"></a></div>
+            <!--<a href="#" class="action_btn"></a>
         <div class="toggle_btn">
             <i class="fa-solid fa-bars"></i>
         </div>-->
-    </div>
-</header>
+          </div>
+        </header>
 
 
-<!--change colors-->
-<div class="colorcirclefront"></div>
-<div class="colorcircle"></div>
-<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-<script>
-    $(window).scroll(function(){
-        var $window = $(window),
-        $colorcircle = $('.colorcircle'),
-        $panel = $('.panel');
+        <!--change colors-->
+        <div class="colorcirclefront"></div>
+        <div class="colorcircle"></div>
+        <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+        <script>
+          $(window).scroll(function () {
+            var $window = $(window),
+              $colorcircle = $('.colorcircle'),
+              $panel = $('.panel');
 
-        var scroll = $window.scrollTop() + ($window.height() / 3);
-        $panel.each(function (){
-            var $this = $(this);
-            if($this.position().top <= scroll &&
-        $this.position().top + $this.height() > scroll){
-            $colorcircle.removeClass(function (index,css){
-                return (css.match (/(^|\s)color-\S+/g) || []).join('');
+            var scroll = $window.scrollTop() + ($window.height() / 3);
+            $panel.each(function () {
+              var $this = $(this);
+              if ($this.position().top <= scroll &&
+                $this.position().top + $this.height() > scroll) {
+                $colorcircle.removeClass(function (index, css) {
+                  return (css.match(/(^|\s)color-\S+/g) || []).join('');
+                });
+                $colorcircle.addClass('color-' + $(this).data('color'));
+              }
             });
-            $colorcircle.addClass('color-' + $(this).data('color'));
-        }
-        });
-    }).scroll();
-</script>
+          }).scroll();
+        </script>
 
+        <script>
+          var h2 = document.getElementById('header');
+
+          function fadeOutOnScroll(element) {
+            if (!element) {
+              return;
+            }
+
+            var distanceToTop = window.pageYOffset + element.getBoundingClientRect().top;
+            var elementHeight = element.offsetHeight;
+            var scrollTop = document.documentElement.scrollTop;
+
+            var opacity = 1;
+
+            if (scrollTop > distanceToTop) {
+              opacity = 1 - (scrollTop - distanceToTop) / elementHeight;
+            }
+
+            if (opacity >= 0) {
+              element.style.opacity = opacity;
+            }
+          }
+
+          function scrollHandler() {
+            fadeOutOnScroll(h2);
+          }
+
+          window.addEventListener('scroll', scrollHandler);
+        </script>
+
+
+        <script>
+          const appear = document.querySelector('.appear');
+          const cb = function (entries) {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('inview');
+              } else {
+                entry.target.classList.remove('inview');
+              }
+            });
+          }
+          const io = new IntersectionObserver(cb);
+          io.observe(appear);
+
+          window.onscroll = function () {
+            scrollRotate();
+          };
+        </script>
+
+        <div class="panel" id="panel1" data-color="violet">
+          <div id="name4">
+            <img class="computer1" src="img/name.gif">
+            <img class="computer" src="img/computer.webp">
+          </div>
+          <section class="grid">
+
+            <ul class="links">
+              <li id="name1">
+                <img class="folder" src="img/folder.webp">
+                <div class="dotandtext">
+                  <div class="dot1"></div>
+                  <a id="texthomepage" href="archive.html">projects</a>
+                </div>
+              </li>
+              <li id="name2">
+                <img class="folder" src="img/folder.webp">
+                <div class="dotandtext">
+                  <div class="dot2"></div>
+                  <a id="texthomepage" href="about.html">about</a>
+                </div>
+              </li>
+              <li id="name3">
+                <img class="folder" src="img/folder.webp">
+                <div class="dotandtext">
+                  <div class="dot3"></div>
+                  <a id="texthomepage" href="contact.html">contact</a>
+                </div>
+              </li>
+            </ul>
+          </section>
+        </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
 <script>
-  var h2 = document.getElementById('header');
-
-  function fadeOutOnScroll(element) {
-  if (!element) {
-    return;
-  }
-  
-  var distanceToTop = window.pageYOffset + element.getBoundingClientRect().top;
-  var elementHeight = element.offsetHeight;
-  var scrollTop = document.documentElement.scrollTop;
-  
-  var opacity = 1;
-  
-  if (scrollTop > distanceToTop) {
-    opacity = 1 - (scrollTop - distanceToTop) / elementHeight;
-  }
-  
-  if (opacity >= 0) {
-    element.style.opacity = opacity;
-  }
-}
-
-function scrollHandler() {
-  fadeOutOnScroll(h2);
-}
-
-window.addEventListener('scroll', scrollHandler);
-</script>
-
-
-<script>
-      const appear = document.querySelector('.appear'); 
-  const cb = function(entries){
+  const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      if(entry.isIntersecting){
-        entry.target.classList.add('inview');
-      }else{
-        entry.target.classList.remove('inview');
+      if (entry.isIntersecting) {
+        anime({
+          targets: '.panel .grid li',
+          opacity: [0, 1],
+          translateY: [40, 0],
+          delay: anime.stagger(800),
+          duration: 2000,
+          easing: 'easeOutExpo'
+        });
+        observer.disconnect(); // chỉ chạy một lần
       }
     });
-  }
-  const io = new IntersectionObserver(cb);
-  io.observe(appear);
+  }, { threshold: 0.3 });
 
-window.onscroll = function () {
-    scrollRotate();
-};
+  const targetPanel = document.querySelector('.panel');
+  if (targetPanel) {
+    observer.observe(targetPanel);
+  }
 </script>
 
-<div class="panel" id ="panel1" data-color="violet">
-<div id="name4">
-  <img class="computer1" src="img/name.gif">
-  <img class="computer" src="img/computer.webp">
-</div>
-<section class="grid">
 
-  <ul class="links">
-    <li id="name1">
-      <img class="folder" src="img/folder.webp">
-      <div class="dotandtext">
-        <div class="dot1"></div>
-        <a id="texthomepage" href="archive.html">projects</a>
-      </div>
-    </li>
-    <li id="name2">
-      <img class="folder" src="img/folder.webp">
-      <div class="dotandtext">
-        <div class="dot2"></div>
-        <a id="texthomepage" href="about.html">about</a>
-      </div>
-    </li>
-    <li id="name3">
-      <img class="folder" src="img/folder.webp">
-      <div class="dotandtext">
-        <div class="dot3"></div>
-        <a id="texthomepage" href="contact.html">contact</a>
-      </div>
-    </li>
-  </ul>
-</section>
-</div>
 
-<!-- class="panel" data-color="violet">
-<section class="grid1">
-    <section class="heading">
-      <img src="img/toilet.png" id="toilet">
 
-        <div class="test">
-            <p>
-               <img id="small" src="img/jellyfish.png"> 
-               <span id="span">intj</span> 
-               <span id="span">2005</span> 
-               <span id="span">montserrat</span>
-               <img id="small" src="img/sushi_1f363.png"> 
-               <span id="span">rmit</span>
-               <span id="span">cat_person</span>
-               <img id="small" src="img/xp1.png">   
-               <span id="span">cybersigilism</span>
-               <img id="small" src="img/axis.png"> 
-               <span id="span">3dmodel</span> 
-               <span id="span">frugiter_aero</span>
-               <img id="small1" src="img/xp.png"> 
-               <span id="span">net.art</span>
-               <img id="small" src="img/1484942334ios-emoji-personal-computer.png"> 
-               <span id="span">hello_world!</span>
-               <span id="span">graphic_design</span>
-               <span id="span">@c0nme0mu</span>
-               <span id="span">for_arts_sake</span>
-               <img id="small" src="img/dada.png"> 
-               
-            </p>  
+      </main>
+      <footer>
+        <div class="stock-ticker">
+          <ul aria-hidden="true">
+            <li>
+              <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
+              <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
+              <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
+            </li>
+            <li>
+              <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
+              <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
+              <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
+            </li>
+            <li>
+              <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
+              <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
+              <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
+            </li>
+          </ul>
+          <ul aria-hidden="true">
+            <li>
+              <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
+              <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
+              <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
+            </li>
+            <li>
+              <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
+              <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
+              <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
+            </li>
+            <li>
+              <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
+              <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
+              <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
+            </li>
+          </ul>
         </div>
-    </section>
-</section>
-</div>-->
+      </footer>
+      <div class="cows">
+        <img src="img/cows.gif" id="idk">
+      </div>
 
-</main>
-<footer>
-  <div class="stock-ticker">
-    <ul aria-hidden="true">
-      <li>
-          <span id="account">@nhetminh★</span>
-          <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
-          <span id="account">@nhetminh★</span>
-      </li>
-      <li>
-          <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
-          <span id="account">@nhetminh</span>
-          <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
-      </li>
-      <li>
-          <span id="account">@nhetminh</span>
-          <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
-          <span id="account">@nhetminh</span>
-      </li>
-    </ul>
-    <ul aria-hidden="true">
-      <li>
-          <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
-          <span id="account">@nhetminh</span>
-          <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
-      </li>
-      <li>
-          <span id="account">@nhetminh</span>
-          <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
-          <span id="account">@nhetminh</span>
-      </li>
-      <li>
-          <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
-          <span id="account">@nhetminh</span>
-          <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
-      </li>
-    </ul>
-  </div>
-  </footer>
-<div class="cows">
-  <img src="img/cows.gif" id="idk">
-</div>
+
+      
 </body>
+
 </html>

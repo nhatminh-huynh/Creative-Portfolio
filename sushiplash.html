@@ -159,12 +159,38 @@ function scrollRotate() {
 <!--GALLERY-->
 <div class="description">
 
-  <div class="abstract">
-    <h3><i id="arrow">↘</i> Our team has devised an innovative approach to showcase the art of sushi-making in seven simple steps, using a captivating game-like format to make it an enjoyable and engaging experience for our viewers. Through this interactive platform, the audience will have a chance to participate in the cooking process in a manner that emulates playing a real-life cooking game. Our ultimate goal is to deliver a delightful experience, and we trust that our presentation and offerings will motivate you to explore the culinary world further.
+  <div class="abstract fade-up">
+    <h3 class="fade-up"><i id="arrow">↘</i> Our team has devised an innovative approach to showcase the art of sushi-making in seven simple steps, using a captivating game-like format to make it an enjoyable and engaging experience for our viewers. Through this interactive platform, the audience will have a chance to participate in the cooking process in a manner that emulates playing a real-life cooking game. Our ultimate goal is to deliver a delightful experience, and we trust that our presentation and offerings will motivate you to explore the culinary world further.
     <br>🍣🍥👾🐠🐙</h3>
-    <h4>Nhat Minh | Khanh An | Ton Ng | Phuong Uyen | Cao Sang</h4>
+    <h4 class="fade-up">Nhat Minh | Khanh An | Ton Ng | Phuong Uyen | Cao Sang</h4>
   </div>
 </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+<script>
+  const fadeUps = document.querySelectorAll('.fade-up');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        anime({
+          targets: entry.target,
+          opacity: [0, 1],
+          translateY: [60, 0],
+          duration: 2000,
+          delay: index * 200, // tạo hiệu ứng delay so le
+          easing: 'easeOutExpo',
+          
+        });
+        
+        observer.unobserve(entry.target); // Chỉ animate 1 lần
+      }
+    });
+  }, {
+    threshold: 0.3
+  });
+  fadeUps.forEach(el => observer.observe(el));
+</script>
 
 
 <div class="containersushiplash">
@@ -172,7 +198,7 @@ function scrollRotate() {
 <div class="panel" data-color="white">
   <div class="item">
     <div class="item-img">
-       <img  src="img/pxelhomepgae.gif" loading="lazy" alt=""/>
+       <img  src="img/pxelhomepgae.gif" alt=""/>
     </div>   
   </div>
 </div>
@@ -180,7 +206,7 @@ function scrollRotate() {
 <div class="panel" data-color="violet">
   <div class="item">
     <div class="item-img">
-       <img src="img/pixel.gif" loading="lazy" alt=""/>
+       <img src="img/pixel.gif"  alt=""/>
     </div>   
   </div>
 </div>
@@ -188,7 +214,7 @@ function scrollRotate() {
 <div class="panel" data-color="white">
   <div class="item">
     <div class="item-img">
-       <img src="img/spritesheet.png" loading="lazy" alt=""/>
+       <img src="img/spritesheet.png" alt=""/>
     </div>   
     <h4 id="button_name">Sprite Sheet<h4>
   </div>
@@ -197,7 +223,7 @@ function scrollRotate() {
 <div class="panel" data-color="violet">
   <div class="item">
     <div class="item-img">
-      <img src="img/fighting.gif" loading="lazy" alt="" />
+      <img src="img/fighting.gif"  alt="" />
     </div>
   </div>
 
@@ -206,7 +232,7 @@ function scrollRotate() {
 <div class="panel" data-color="white">
   <div class="item">
     <div class="item-img">
-      <img src="img/monzter-animation3.gif" loading="lazy" alt="" />
+      <img src="img/monzter-animation3.gif" alt="" />
     </div>
   </div>
 </div>
@@ -214,7 +240,7 @@ function scrollRotate() {
 <div class="panel" data-color="violet">
   <div class="item">
     <div class="item-img">
-      <img src="img/enjoy.gif" loading="lazy" alt="" />
+      <img src="img/enjoy.gif" alt="" />
     </div>
   </div>
 </div>
@@ -244,9 +270,9 @@ function scrollRotate() {
     <div class="item-img" id="slider-container">
       
       <div class="slider">
-        <img src="img/15.png" loading="lazy" alt="" />
-        <img src="img/29.png" loading="lazy" alt="" />
-        <img src="img/30.png" loading="lazy" alt="" />
+        <img src="img/15.webp" loading="lazy" alt="" />
+        <img src="img/29.webp" loading="lazy" alt="" />
+        <img src="img/30.webp" loading="lazy" alt="" />
       </div>
 
     </div>

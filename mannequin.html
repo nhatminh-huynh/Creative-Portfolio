@@ -156,11 +156,11 @@
 <!--GALLERY-->
 <div class="description">
 
-  <div class="abstract">
-    <h3 id="h3_mannequin"><i id="arrow">↘</i> Mannequins are one of the forms of visual art. A disco-ball-skinned mannequin is the main character of Lumiere's story. The project gives viewers a new perspective on Lumiere in two aspects: art and innovation. Mannequins express the beauty of the times through clothing, while Lumiere shows passion and talent through creative challenges and constant change. 
+  <div class="abstract fade-up'">
+    <h3 id="h3_mannequin" class="fade-up"><i id="arrow">↘</i> Mannequins are one of the forms of visual art. A disco-ball-skinned mannequin is the main character of Lumiere's story. The project gives viewers a new perspective on Lumiere in two aspects: art and innovation. Mannequins express the beauty of the times through clothing, while Lumiere shows passion and talent through creative challenges and constant change. 
     <br>🪩🪩🪩🪩🪩</h3>
-    <h4 id="h4_mannequin">Lumiere Designer 2022</h4>
-    <h5> 
+    <h4 id="h4_mannequin" class="fade-up">Lumiere Designer 2022</h4>
+    <h5 class="fade-up"> 
   Art Director: Nhat Minh
   <br>Mentors: Ha Le, Men Thuong
   <br>3D Modeling: Han Bui, Hong Minh, Hong Anh, Nhat Minh
@@ -173,6 +173,8 @@
 </h5>
   </div>
 </div>
+
+
 
 
 <div class="containersushiplash">
@@ -251,6 +253,33 @@
     </div>
 
 </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+<script>
+  const fadeUps = document.querySelectorAll('.fade-up');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        anime({
+          targets: entry.target,
+          opacity: [0, 1],
+          translateY: [60, 0],
+          duration: 2000,
+          delay: index * 200, // tạo hiệu ứng delay so le
+          easing: 'easeOutExpo',
+          
+        });
+        
+        observer.unobserve(entry.target); // Chỉ animate 1 lần
+      }
+    });
+  }, {
+    threshold: 0.3
+  });
+
+  fadeUps.forEach(el => observer.observe(el));
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/intersection-observer@0.12.2/intersection-observer.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>

@@ -160,11 +160,11 @@ function scrollRotate() {
     <img src="img/cows.gif" id="idk">
     
     <!-- H3s positioned absolutely over the image -->
-    <h3 class="cow-text" style="top: 15%; left: 22%;">● Email: huynhtrucnhatminh@gmail.com</h3>
-    <h3 class="cow-text" style="top: 30%; left: 55%;">● Phone: +84 928 313 692</h3>
-    <h3 class="cow-text" style="top: 50%; left: 35%;">● Instagram: @nhetminh</h3>
-    <h3 class="cow-text" style="top: 65%; left: 10%;">● Facebook: Huỳnh Trúc Nhật Minh</h3>
-    <h3 class="cow-text" style="top: 65%; left: 65%;">● LinkedIn: Huỳnh Trúc Nhật Minh</h3>
+    <h3 class="cow-text fade-up" style="top: 15%; left: 22%;">● Email: huynhtrucnhatminh@gmail.com</h3>
+    <h3 class="cow-text fade-up" style="top: 30%; left: 55%;">● Phone: +84 928 313 692</h3>
+    <h3 class="cow-text fade-up" style="top: 50%; left: 35%;">● Instagram: @nhetminh</h3>
+    <h3 class="cow-text fade-up" style="top: 65%; left: 10%;">● Facebook: Huỳnh Trúc Nhật Minh</h3>
+    <h3 class="cow-text fade-up" style="top: 65%; left: 65%;">● LinkedIn: Huỳnh Trúc Nhật Minh</h3>
   </div>
 </div>
 
@@ -198,6 +198,31 @@ function scrollRotate() {
   </script>
 </script>
 
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+<script>
+  const fadeUps = document.querySelectorAll('.fade-up');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        anime({
+          targets: entry.target,
+          opacity: [0, 1],
+          translateY: [60, 0],
+          duration: 2000,
+          delay: index * 200, // tạo hiệu ứng delay so le
+          easing: 'easeOutExpo'
+        });
+        observer.unobserve(entry.target); // Chỉ animate 1 lần
+      }
+    });
+  }, {
+    threshold: 0.3
+  });
+
+  fadeUps.forEach(el => observer.observe(el));
+</script>
 </main>
 
 <footer>
@@ -210,29 +235,29 @@ function scrollRotate() {
       </li>
       <li>
           <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
-          <span id="account">@nhetminh</span>
+          <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
           <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
       </li>
       <li>
-          <span id="account">@nhetminh</span>
           <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
-          <span id="account">@nhetminh</span>
+          <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
+          <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
       </li>
   </ul>
   <ul aria-hidden="true">
     <li>
           <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
-          <span id="account">@nhetminh</span>
+          <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
           <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
       </li>
       <li>
-          <span id="account">@nhetminh</span>
           <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
-          <span id="account">@nhetminh</span>
+          <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
+          <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
       </li>
       <li>
           <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
-          <span id="account">@nhetminh</span>
+          <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
           <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
       </li>
   </ul>

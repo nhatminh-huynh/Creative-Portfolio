@@ -534,6 +534,8 @@ section.grid {
     position: relative;
 }
 
+
+
 .grid {
     margin-top: 8vw;
     display: flex;
@@ -957,10 +959,12 @@ h2 {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    top: 0;
+    top: -10vw;
     z-index: -2;
     width: fit-content;
 }
+
+
 
 .computer-wrapper {
     position: relative;
@@ -2086,6 +2090,7 @@ p {
     padding-top: 2vw;
     width: 120px;
     height: auto;
+    transform: none;
 }
 
 #image:hover {
@@ -3017,3 +3022,4 @@ button.next {
     right: 9vw;
     top: 9vw;
 }
+

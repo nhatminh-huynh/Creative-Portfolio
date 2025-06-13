@@ -159,8 +159,8 @@
 <!--GALLERY-->
 <div class="description">
 
-  <div class="abstract">
-    <h3 id="h3_mannequin"><i id="arrow">↘</i> For me, art is not only about the creator—it's also about inviting the audience to become part of the creative process. That belief led me to explore various forms of interactive art, which I’ve grown truly passionate about.
+  <div class="abstract fade-up">
+    <h3 id="h3_mannequin" class="fade-up"><i id="arrow">↘</i> For me, art is not only about the creator—it's also about inviting the audience to become part of the creative process. That belief led me to explore various forms of interactive art, which I’ve grown truly passionate about.
 
 I work primarily with TouchDesigner and VS Code (using p5.js) to develop interactive and self-generative pieces that respond to the audience’s input. By incorporating elements of randomness and unexpected outcomes, my works become ever-changing and unpredictable, creating a unique experience each time they’re viewed or performed.
 
@@ -169,6 +169,31 @@ Through this interplay of control and chance, I express my personal voice while 
 
   </div>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+<script>
+  const fadeUps = document.querySelectorAll('.fade-up');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        anime({
+          targets: entry.target,
+          opacity: [0, 1],
+          translateY: [60, 0],
+          duration: 2000,
+          delay: index * 200, // tạo hiệu ứng delay so le
+          easing: 'easeOutExpo',
+          
+        });
+        
+        observer.unobserve(entry.target); // Chỉ animate 1 lần
+      }
+    });
+  }, {
+    threshold: 0.3
+  });
+  fadeUps.forEach(el => observer.observe(el));
+</script>
 
 
 <div class="panel" data-color="white">

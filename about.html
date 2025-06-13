@@ -163,20 +163,20 @@ function scrollRotate() {
 
 <div class="grid2">
   <div class="content-wrapper">
-    <div id="intro">
-      <img src="img/hii.webp" id="smallabout">
+    <div id="intro" class="fade-up">
+      <img src="img/hii.webp" id="smallabout" class="fade-up">
       <i id="j">
-        <span id="gettoknow"><i id="arrow">⤷</i> let's get to know</span>
+        <span id="gettoknow" class="fade-up"><i id="arrow">⤷</i> let's get to know</span>
       </i>
-      <div id="changetext">
+      <div id="changetext" class="fade-up">
         <i id="blur">me:)</i>
       </div>
-      <img src="img/blink.webp" id="smallabout2">
+      <img src="img/blink.webp" id="smallabout2" class="fade-up">
     </div>
 
-    <div class="image-wrapper">
-      <img src="img/aboutclip.webp" loading="lazy" id="aboutclip">
-      <img src="img/cows.gif" loading="lazy" id="grass">
+    <div class="image-wrapper fade-up">
+      <img src="img/aboutclip.webp"  id="aboutclip" >
+      <img src="img/cows.gif" id="grass">
     </div>
   </div>
 </div>
@@ -206,29 +206,38 @@ var changeText = document.getElementById("blur")
 
 }
 </script>
+
 <!--<img src="img/aboutbasebitmap.png" id="abouttext">-->
 
 <!--FLIPCARD-->
 
 <div class="panel" id="panel" data-color="indigo">
-  <div class="flip-card">
+  <div class="flip-card fade-up">
     <div class="flip-card__front-side">
       <div class="cccd">
 
-        <div class="portrait_infor">
+        <div class="portrait_infor fade-up">
 
-          <div class="portrait">
-            <img src="img/portrait.png" loading="lazy"  id="portrait">
-            <h2>Nhat Minh<br><span class="italic">/visual artist/</span></h2>
+          <div class="portrait fade-up">
+            <img src="img/portrait.png" loading="lazy" id="portrait" class="fade-up">
+            <h2>Nhat Minh<br><span class="italic fade-up">/visual artist/</span></h2>
           </div>
 
-          <div class="infor">
+          <div class="infor fade-up">
             <h3>
-Huynh Truc Nhat Minh is a multimedia visual artist based in Ho Chi Minh City, Vietnam. Their practice draws strong inspiration from net.art—a digital art form that emerged in the 1990s using the internet as both medium and subject—and the emotional presence of computers as cultural artifacts. Nhat Minh is also deeply interested in conceptual art, especially works where the audience takes an active role in the creative process rather than remaining passive observers.
-<br>
-<br>Their work combines playful experimentation with cultural reflection, often exploring the Vina-Manifesto—an ongoing approach that incorporates Vietnamese culture and everyday life to inform and expand their artistic concepts.
-<br>
-<br> Currently a second-year student at the Royal Melbourne Institute of Technology, Nhat Minh continues to experiment across multiple platforms and mediums, embracing the fluid boundaries between digital and physical forms.
+              Huynh Truc Nhat Minh is a multimedia visual artist based in Ho Chi Minh City, Vietnam. Their practice
+              draws strong inspiration from net.art—a digital art form that emerged in the 1990s using the internet as
+              both medium and subject—and the emotional presence of computers as cultural artifacts. Nhat Minh is also
+              deeply interested in conceptual art, especially works where the audience takes an active role in the
+              creative process rather than remaining passive observers.
+              <br>
+              <br>Their work combines playful experimentation with cultural reflection, often exploring the
+              Vina-Manifesto—an ongoing approach that incorporates Vietnamese culture and everyday life to inform and
+              expand their artistic concepts.
+              <br>
+              <br> Currently a second-year student at the Royal Melbourne Institute of Technology, Nhat Minh continues
+              to experiment across multiple platforms and mediums, embracing the fluid boundaries between digital and
+              physical forms.
             </h3>
           </div>
         </div>
@@ -236,18 +245,19 @@ Huynh Truc Nhat Minh is a multimedia visual artist based in Ho Chi Minh City, Vi
     </div>
 
     <div class="flip-card__back-side">
-   
+
+    </div>
+  </div>
+  <div>
   </div>
 </div>
-<div>
-</div>
-</div>
+
 
 <div class="panel" id="panel" data-color="violet">
-  <section class="grid_abt">
-    <img src="img/snail.gif" loading="lazy" id="face">
+  <section class="grid_abt fade-up">
+    <img src="img/snail.gif" loading="lazy" id="face"  class="fade-up">
     <div id="intro_logos">
-      <div id="introduction">
+      <div id="introduction"  class="fade-up">
         <h2>★ education</h2>
       
         <p><span id="year">2023-</span>
@@ -261,7 +271,7 @@ Huynh Truc Nhat Minh is a multimedia visual artist based in Ho Chi Minh City, Vi
           <br>◟ VJ performance at RMIT Saigon South
 
           <br><span id="year">2024</span>
-          <br><span id="important">RMIT Impact | Online School Showcase</span>
+          <br><span id="important" >RMIT Impact | Online School Showcase</span>
           <br>◟ <a href="https://www.rmitvn-showcase.com/scd-dm-visual-design/en/quy-tha-ma-bat" target="_blank">Quy tha ma bat ↗</a>
           <br>◟ <a href="https://www.rmitvn-showcase.com/scd-dm-interaction/en/anatomical-theatre" target="_blank">Anatomical Theatre ↗</a>
           <br>◟ <a href="https://www.rmitvn-showcase.com/scd-dm-interaction/en/sushi-splash" target="_blank">Sushi Splash ↗</a>
@@ -273,41 +283,67 @@ Huynh Truc Nhat Minh is a multimedia visual artist based in Ho Chi Minh City, Vi
     </div>
   </section>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+<script>
+  const fadeUps = document.querySelectorAll('.fade-up');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        anime({
+          targets: entry.target,
+          opacity: [0, 1],
+          translateY: [60, 0],
+          duration: 2000,
+          delay: index * 200, // tạo hiệu ứng delay so le
+          easing: 'easeOutExpo'
+        });
+        observer.unobserve(entry.target); // Chỉ animate 1 lần
+      }
+    });
+  }, {
+    threshold: 0.3
+  });
+
+  fadeUps.forEach(el => observer.observe(el));
+</script>
+
+
 </main>
 
 <footer>
 <div class="stock-ticker">
   <ul aria-hidden="true">
     <li>
-          <span id="account">@nhetminh</span>
           <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
-          <span id="account">@nhetminh</span>
-      </li>
-      <li>
           <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
-          <span id="account">@nhetminh</span>
           <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
       </li>
       <li>
-          <span id="account">@nhetminh</span>
           <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
-          <span id="account">@nhetminh</span>
+          <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
+          <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
+      </li>
+      <li>
+          <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
+          <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
+          <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
       </li>
   </ul>
   <ul aria-hidden="true">
     <li>
           <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
-          <span id="account">@nhetminh</span>
+          <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
           <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
       </li>
       <li>
-          <span id="account">@nhetminh</span>
           <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
-          <span id="account">@nhetminh</span>
+          <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
+          <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
       </li>
       <li>
           <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
-          <span id="account">@nhetminh</span>
+          <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
           <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
       </li>
   </ul>

@@ -159,14 +159,14 @@
 <!--GALLERY-->
 <div class="description">
 
-  <div class="abstract">
-    <h3 id="h3_mannequin"><i id="arrow">↘</i> This was one of the most incredible experiences I’ve ever had. I learned how to combine music, beats, and visuals in a cohesive way. We used Resolume for VJing, while the visuals were created using Blender, After Effects, and Photoshop.
+  <div class="abstract fade-up">
+    <h3 id="h3_mannequin" class="fade-up"><i id="arrow">↘</i> This was one of the most incredible experiences I’ve ever had. I learned how to combine music, beats, and visuals in a cohesive way. We used Resolume for VJing, while the visuals were created using Blender, After Effects, and Photoshop.
 
 The concept poses a satirical question: What would be left of the world if mothers stopped warning their kids about dirty street food, if all 100 million people in Vietnam owned a red or blue plastic chair, and if limbs were boxed up and sold at a discount because no one needed them anymore? You're invited to count down the days… to the end of the world.
     <br>💥🥫🛒💼🌊</h3>
 
-<h4>Credits</h4>
-<h5> 
+<h4 class="fade-up">Credits</h4>
+<h5 class="fade-up"> 
   Scene Direction: Ton Ng, Khanh An, Nhat Minh
   <br>3D Modeling: Ton Ng, Khanh An, Nhat Minh
   <br>3D Animation: Ton Ng, Khanh An, Nhat Minh, Tri Nhan
@@ -184,51 +184,32 @@ The concept poses a satirical question: What would be left of the world if mothe
 
   </div>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+<script>
+  const fadeUps = document.querySelectorAll('.fade-up');
 
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        anime({
+          targets: entry.target,
+          opacity: [0, 1],
+          translateY: [60, 0],
+          duration: 2000,
+          delay: index * 200, // tạo hiệu ứng delay so le
+          easing: 'easeOutExpo',
+          
+        });
+        
+        observer.unobserve(entry.target); // Chỉ animate 1 lần
+      }
+    });
+  }, {
+    threshold: 0.3
+  });
+  fadeUps.forEach(el => observer.observe(el));
+</script>
 
-<!--<div class="containersushiplash">
-
-<div class="panel" data-color="white">
-  <div class="item">
-    <div class="item-img">
-       <img  src="img/sec (2) (1).png" alt=""/>
-       <h4 id="button_name">Piercings<h4>
-    </div>   
-  </div>
-</div>
-
-<div class="panel" data-color="white">
-  <div class="item">
-    <div class="item-img">
-       <img  src="img/practice-1 (1).png" alt=""/>
-       <h4 id="button_name">Untitled-1<h4>
-    </div>   
-  </div>
-</div>
-<div class="panel" data-color="white">
-    <div class="item">
-      <div class="item-img">
-         <img  src="img/chrome heart 1 (1) (1).png" alt=""/>
-         <h4 id="button_name">Untitled-2<h4>
-      </div>   
-    </div>
-  </div>
-  <div class="panel" data-color="white">
-    <div class="item">
-      <div class="item-img">
-         <img  src="img/mefosaod (1).png" alt=""/>
-         <h4 id="button_name">Untitled-3<h4>
-      </div>   
-    </div>
-  </div>
-  <div class="panel" data-color="white">
-    <div class="item">
-      <div class="item-img_href">
-        <iframe width="853" height="480" src="https://www.youtube.com/embed/e75xqtVZ9pc" title="METALHEAD" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>        
-        <h4 id="button_name">Untitled-4<h4>
-    </div>
-</div>
-</div>-->
 
 <div class="panel" data-color="white">
 
@@ -310,7 +291,7 @@ The concept poses a satirical question: What would be left of the world if mothe
 <div class="panel" data-color="violet">
   <div class="item">
     <div class="item-img">
-      <img src="img/0053.png" loading="lazy" alt="" />
+      <img src="img/0053.webp" loading="lazy" alt="" />
     </div>
   </div>
 </div>
@@ -318,7 +299,7 @@ The concept poses a satirical question: What would be left of the world if mothe
 <div class="panel" data-color="violet">
   <div class="item">
     <div class="item-img">
-      <img src="img/viahe_test.png" loading="lazy" alt="" />
+      <img src="img/viahe_test.webp" loading="lazy" alt="" />
     </div>
   </div>
 </div>
@@ -327,7 +308,7 @@ The concept poses a satirical question: What would be left of the world if mothe
 <div class="panel" data-color="violet">
   <div class="item">
     <div class="item-img">
-      <img src="img/testhead2.png" loading="lazy" alt="" />
+      <img src="img/testhead2.webp" loading="lazy" alt="" />
     </div>
   </div>
 </div>

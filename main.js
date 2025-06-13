@@ -87,3 +87,5 @@ window.onload = function() {
     return `${str.substring(0, index)}${chr}${str.substring(index + 1)}`;
   }
 };
+
+
