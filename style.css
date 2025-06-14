@@ -2583,10 +2583,6 @@ footer {
         inset 0 -2px 3px rgba(0, 0, 0, 0.014);
     border-radius: 10vw;
     text-shadow: 0 1px 0 #ff0000;
-
-    /*background-image: linear-gradient(180deg, #f0f0f0 0%, #dddddd 100%);
-    border: 1px solid #ff0000;
-    border-radius: 10vw;*/
     padding: 0.2vw 1vw;
 
 
@@ -2767,10 +2763,7 @@ iframe {
         inset 0 -2px 3px rgba(0, 0, 0, 0.014);
     border-radius: 10vw;
     text-shadow: 0 1px 0 #ff00d9;
-
-    /*background-image: linear-gradient(180deg, #f0f0f0 0%, #dddddd 100%);
-    border: 1px solid #ff20e1;
-    border-radius: 10vw;*/
+    
     padding: 0.2vw 1vw;
 
 
