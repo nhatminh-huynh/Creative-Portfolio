@@ -2763,7 +2763,7 @@ iframe {
         inset 0 -2px 3px rgba(0, 0, 0, 0.014);
     border-radius: 10vw;
     text-shadow: 0 1px 0 #ff00d9;
-    
+
     padding: 0.2vw 1vw;
 
 
@@ -3029,5 +3029,15 @@ button.next {
 
     right: 9vw;
     top: 9vw;
+}
+
+#flyingObject {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  pointer-events: none;
+  transform: translate(0, 0) rotate(0deg);
+  transition: transform 0.1s linear;
 }
 
