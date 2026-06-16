@@ -10,77 +10,90 @@
   <link rel="icon" type="image/x-icon" href="img/buttton-green.png">
 
 </head>
+
+
     <!--spin on scroll-->
     <div class="wrapper">
-        <div class="circle">
-      <img id="reload" src="img/hot-dog_1f32d.webp" alt="scroll">
-        </div>
-</div>
-      <div id="fact">-->please hire me<--</div>
-      <script>
-        document.getElementById("reload").onclick = function() {
-            var x = document.getElementById("fact")
-            if(x.style.opacity === "0") {
-            x.style.opacity = "100";
-          }
-          else {
-            x.style.opacity = "0";
-          }
-        }
-     </script>
-<script src="main.js"></script>
+      <div class="circle">
+        <img id="reload" src="img/hot-dog_1f32d.webp" alt="scroll">
+      </div>
+    </div>
+    
+    <div id="fact">-->please hire me<-- </div>
+    
+        <script>
+          const reload = document.getElementById("reload");
+          const fact = document.getElementById("fact");
+
+          reload.addEventListener("click", () => {
+            const isHidden = getComputedStyle(fact).opacity == "0";
+
+            anime({
+              targets: fact,
+              opacity: isHidden ? 1 : 0,
+              duration: 300,
+              easing: "easeInOutQuad"
+            });
+          });
+        </script>
+        <script src="main.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+
+
 <main>
     <div class="scrollbg">
-    <section>
-      <img src="img/asterisk.webp" id="star4_home">
-    </section>
-    <section>
-      <img src="img/asterisk.webp" id="star5_home">
-    </section>
-    <section>
-      <img src="img/asterisk.webp" id="star6_home">
-    </section>
-    <section>
-      <img src="img/asterisk.webp" id="star7_home">
-    </section>
-    <section>
-      <img src="img/asterisk.webp" id="star8_home">
-    </section>
-    <section>
-      <img src="img/asterisk.webp" id="star9_home">
-    </section>
-  </div>
+      <section>
+        <img src="img/asterisk.webp" id="star4_home">
+      </section>
+      <section>
+        <img src="img/asterisk.webp" id="star5_home">
+      </section>
+      <section>
+        <img src="img/asterisk.webp" id="star6_home">
+      </section>
+      <section>
+        <img src="img/asterisk.webp" id="star7_home">
+      </section>
+      <section>
+        <img src="img/asterisk.webp" id="star8_home">
+      </section>
+      <section>
+        <img src="img/asterisk.webp" id="star9_home">
+      </section>
+    </div>
       
     <script>
-    window.onscroll = function () {
+      window.onscroll = function () {
         scrollRotate();
-    };
-    function scrollRotate() {
+      };
+      function scrollRotate() {
         let image = document.getElementById("reload");
-        image.style.transform = "rotate(" + window.pageYOffset/2 + "deg)";
-    
-      let section = document.getElementById("star4_home");
-      section.style.transform = "rotate(" + window.pageYOffset + "deg)";
-    
-      let section1 = document.getElementById("star5_home");
-      section1.style.transform = "rotate(" + window.pageYOffset + "deg)";
-    
-      let section2 = document.getElementById("star6_home");
-      section2.style.transform = "rotate(" + window.pageYOffset + "deg)";
-    
-      let section3 = document.getElementById("star7_home");
-      section3.style.transform = "rotate(" + window.pageYOffset + "deg)";
-    
-      let section4 = document.getElementById("star8_home");
-      section4.style.transform = "rotate(" + window.pageYOffset + "deg)";
-    
-      let section5 = document.getElementById("star9_home");
-      section5.style.transform = "rotate(" + window.pageYOffset + "deg)";
-    
-      let section6 = document.getElementById("star10_home");
-      section6.style.filter = "hue-rotate(" + window.pageYOffset + "deg)";
-    }
+        image.style.transform = "rotate(" + window.pageYOffset / 2 + "deg)";
+
+        let section = document.getElementById("star4_home");
+        section.style.transform = "rotate(" + window.pageYOffset + "deg)";
+
+        let section1 = document.getElementById("star5_home");
+        section1.style.transform = "rotate(" + window.pageYOffset + "deg)";
+
+        let section2 = document.getElementById("star6_home");
+        section2.style.transform = "rotate(" + window.pageYOffset + "deg)";
+
+        let section3 = document.getElementById("star7_home");
+        section3.style.transform = "rotate(" + window.pageYOffset + "deg)";
+
+        let section4 = document.getElementById("star8_home");
+        section4.style.transform = "rotate(" + window.pageYOffset + "deg)";
+
+        let section5 = document.getElementById("star9_home");
+        section5.style.transform = "rotate(" + window.pageYOffset + "deg)";
+
+        let section6 = document.getElementById("star10_home");
+        section6.style.filter = "hue-rotate(" + window.pageYOffset + "deg)";
+      }
     </script>
+
+    
 <header>
     <div class="navbar">
       <div class="logo"><a href="index.html"><img src="img/logo.webp" id="logomeo"></a></div>
@@ -146,31 +159,38 @@
 
 <!--viewmore-->
     <div>
-        <i id="j">
-            <span id="gettoknow_prj" class="viewmore">
-
-            <a id="view" href="archive.html">view more<i id="arrow">↗</i></a>
+      <i id="j">
+        <span id="gettoknow_prj" class="viewmore">
+          <a id="view" href="archive.html">view more<i id="arrow">↗</i></a>
         </span>
-          </i> 
+      </i>
     </div>
+
 <!--GALLERY-->
 <div class="description">
 
   <div class="abstract fade-up'">
-    <h3 id="h3_mannequin" class="fade-up"><i id="arrow">↘</i> Mannequins are one of the forms of visual art. A disco-ball-skinned mannequin is the main character of Lumiere's story. The project gives viewers a new perspective on Lumiere in two aspects: art and innovation. Mannequins express the beauty of the times through clothing, while Lumiere shows passion and talent through creative challenges and constant change. 
-    <br>🪩🪩🪩🪩🪩</h3>
-    <h4 id="h4_mannequin" class="fade-up">Lumiere Designer 2022</h4>
-    <h5 class="fade-up"> 
-  Art Director: Nhat Minh
-  <br>Mentors: Ha Le, Men Thuong
-  <br>3D Modeling: Han Bui, Hong Minh, Hong Anh, Nhat Minh
-  <br>3D Animation: Han Bui, Hong Anh, Nhat Minh
-  <br>Stop-motion Assets: Hong Anh, Hong Minh, Phuong Anh, Bao Ngoc
-  <br>Typography Effect: Nhat Minh
-  <br>Video Production: Han Bui, Nhat Minh
-  <br>Music Producer: LHP Harmonica Club
+    <h3 id="h3_mannequin" class="fade-up"><i id="arrow">↘</i> <span class="club-name">'Mannequin'</span>  was a photography project I did during high school as the Art Director of the Photography Club—<span
+      class="club-name">'Lumiere'</span>.
+    <br>
+    <br>
+    Inspired by mannequins as a form of visual art, the project featured a disco-ball-skinned mannequin as its central
+    character, symbolizing reflection, creativity, and transformation. Through this concept, we explored Lumiere's identity
+    from two perspectives: art and innovation. Just as mannequins embody the spirit of an era through fashion, Lumiere
+    represents passion, talent, and a commitment to embracing new creative challenges through continuous evolution.
+    </h3>
 
-</h5>
+    <!--h4 id="h4_mannequin" class="fade-up">Lumiere Designer 2022</h4>
+    <h5 class="fade-up">
+      Art Director: Nhat Minh
+      <br>Mentors: Ha Le, Men Thuong
+      <br>3D Modeling: Han Bui, Hong Minh, Hong Anh, Nhat Minh
+      <br>3D Animation: Han Bui, Hong Anh, Nhat Minh
+      <br>Stop-motion Assets: Hong Anh, Hong Minh, Phuong Anh, Bao Ngoc
+      <br>Typography Effect: Nhat Minh
+      <br>Video Production: Han Bui, Nhat Minh
+      <br>Music Producer: LHP Harmonica Club
+    </h5-->
   </div>
 </div>
 
@@ -179,59 +199,66 @@
 
 <div class="containersushiplash">
 
-<div class="panel" data-color="white">
-  <div class="item">
-    <div class="item-img">
-       <img  src="img/finalscence.webp"  alt=""/>
-    </div>   
-  </div>
-</div>
-
-<div class="panel" data-color="white">
-    <div class="item">
-    <div class="item-img">
-       <img src="img/bộđồ.png"alt=""/>
-    </div>   
-  </div>
-</div>
-
-<div class="panel" data-color="white">
-    <div class="item">
-    <div class="item-img">
-        <img src="img/phitieeu.webp" id="button_mannequin">
-       <img src="img/Artboard 1.webp" alt=""/>
-    </div>   
-  </div>
-</div>
-
-<div class="panel" data-color="white">
-    <div class="item">
-    <div class="item-img">
-        <img src="img/phitieeu.webp" id="button_mannequin">
-       <img  src="img/Artboard 2.webp" alt=""/>
-    </div>   
-  </div>
-</div>
-
-<div class="panel" data-color="white">
+  <div class="panel" data-color="white">
     <div class="item">
       <div class="item-img">
-        <img src="img/phitieeu.webp" id="button_mannequin">
-         <img  src="img/Artboard 3.webp" alt=""/>
-      </div>   
+        <img src="img/finalscence.webp" alt="" />
+      </div>
     </div>
   </div>
 
   <div class="panel" data-color="white">
     <div class="item">
       <div class="item-img">
-         <img src="img/phitieeu.webp" id="button_mannequin">
-         <img  src="img/Artboard 12.webp"alt=""/>
-      </div>   
+        <img src="img/bộđồ.png" class="no-border" alt="" />
+      </div>
     </div>
   </div>
 
-   <div class="panel" data-color="white">
+  <div class="panel" data-color="white">
+    <div class="item">
+      <div class="item-img">
+        <img src="img/Artboard 1.webp" alt="" />
+      </div>
+    </div>
+  </div>
+
+  <div class="panel" data-color="white">
+    <div class="item">
+      <div class="item-img">
+        <img src="img/Artboard 2.webp" alt="" />
+      </div>
+    </div>
+  </div>
+
+  <div class="panel" data-color="white">
+    <div class="item">
+      <div class="item-img">
+        <img src="img/Artboard 3.webp" alt="" />
+      </div>
+    </div>
+  </div>
+
+  <div class="panel" data-color="white">
+    <div class="item">
+      <div class="item-img">
+        <img src="img/Artboard 12.webp" alt="" />
+      </div>
+    </div>
+  </div>
+
+  <div class="panel" data-color="white">
+    <div class="item">
+      <div class="item-img">
+        <video class="video-background" autoplay loop muted playsinline>
+          <source src="img/gugu_1.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <h4 id="button_name">Final Scene</h4>
+    </div>
+  </div>
+  
+  <div class="panel" data-color="white">
     <div class="item">
       <div class="item-img">
         <a href="https://www.facebook.com/LumiereLHP/videos/100234529828871" target="_blank" id="link_full">Watch full
@@ -239,106 +266,90 @@
       </div>
     </div>
   </div>
-  
-    <div class="panel" data-color="white">
-      <div class="item">
-        <div class="item-img">
-          <iframe width="320" height="570" src="https://www.youtube.com/embed/5K5YTHNbcSA"
-            title="PROJECT MANNEQUIN | LUMIERE" frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-        <h4 id="button_name">Final Scene<h4>
-      </div>
-    </div>
+
 
 </div>
 
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-<script>
-  const fadeUps = document.querySelectorAll('.fade-up');
-
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach((entry, index) => {
-      if (entry.isIntersecting) {
-        anime({
-          targets: entry.target,
-          opacity: [0, 1],
-          translateY: [60, 0],
-          duration: 2000,
-          delay: index * 200, // tạo hiệu ứng delay so le
-          easing: 'easeOutExpo',
-          
-        });
-        
-        observer.unobserve(entry.target); // Chỉ animate 1 lần
-      }
-    });
-  }, {
-    threshold: 0.3
-  });
-
-  fadeUps.forEach(el => observer.observe(el));
-</script>
-
 <script src="https://cdn.jsdelivr.net/npm/intersection-observer@0.12.2/intersection-observer.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
 <script>
-    const items = Array.from(document.querySelectorAll(".item"));
+  // =========================
+  // FADE UP ANIMATION
+  // =========================
 
+  const fadeUps = document.querySelectorAll(".panel");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          anime({
+            targets: entry.target,
+            opacity: [0, 1],
+            translateY: [60, 0],
+            duration: 1200,
+            delay: index * 100,
+            easing: "easeOutExpo",
+          });
+
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.3,
+    }
+  );
+
+  fadeUps.forEach((el) => {
+    el.style.opacity = "0";
+    observer.observe(el);
+  });
+
+  // =========================
+  // SCALE EFFECT
+  // =========================
+
+  const items = document.querySelectorAll(".item");
+
+  function setScale() {
     items.forEach((item) => {
-        const img = item.querySelector(".item-img");
-        gsap.set(img, {scale:0});
+      const img = item.querySelector(".item-img");
+
+      if (!img) return;
+
+      const rect = item.getBoundingClientRect();
+
+      const viewportCenter = window.innerHeight / 2;
+      const itemCenter = rect.top + rect.height / 2;
+
+      const distance = Math.abs(viewportCenter - itemCenter);
+
+      const progress = distance / viewportCenter;
+
+      const adjustedProgress = Math.pow(progress, 2);
+
+      let scale = 1 - adjustedProgress * 0.5;
+
+      scale = Math.max(0.5, Math.min(scale, 1));
+
+      gsap.set(img, {
+        scale: scale,
+      });
     });
+  }
 
-    function setScale(){
-        items.forEach((item) => {
-            const img = item.querySelector(".item-img");
-            const rect = item.getBoundingClientRect();
+  // chạy lần đầu
+  setScale();
 
-            const viewportHeight = window.innerHeight;
-            const itemCenter = rect.top + rect.height / 2;
+  // cập nhật khi scroll
+  window.addEventListener("scroll", setScale);
 
-            const distanceFromCenter = Math.abs(viewportHeight / 2 - itemCenter);
-
-            const progress = distanceFromCenter / (viewportHeight / 2);
-
-            const adjustedProgress = Math.pow(progress, 2);
-
-            let scale = 1 - adjustedProgress * 0.5;
-            scale = Math.max(0, Math.min(scale,1));
-
-            gsap.to(img, {scale: scale, duration:0.1});
-        });
-    }
-
-    setScale();
-
-    window.addEventListener("scroll", setScale);
-    let scroll = 0;
-    let oldScrollY = 0;
-    let roundedScrollY = 0;
-    const lerpAmount = 0.1;
-
-    function lerp(start, end, t){
-        return start * (1 - t) + end * i;
-    }
-
-    function animate(){
-        requestAnimationFrame(animate);
-
-        roundedScrollY = lerp(roundedScrollY, scrollY, lerpAmount);
-
-        document.querySelector(".container").style.transform = 'translate3d(0, ${-roundedScrollY}px, 0)';
-
-        setScale();
-    }
-
-    window.addEventListener("scroll", (e) => {
-        scrollY = window.scrollY;
-    });
-
-    animate();
+  // cập nhật khi resize
+  window.addEventListener("resize", setScale);
 </script>
 
 </main>

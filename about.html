@@ -8,39 +8,38 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <link rel="icon" type="image/x-icon" href="img/buttton-green.png">
-
 </head>
+
+
 <body onload="move('element')">
 
-<!--LOADING PAGE
-<div class="loading-page">
-    <img src="img/keyboard.gif" id="keyboard">
-</div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"
-    integrity="sha512-gmwBmiTVER57N3jYS3LinA9eb8aHrJua5iQD7yqYCKa5x6Jjc7VDVaEA0je0Lu0bP9j7tEjV3+1qUm6loO99Kw=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="./script.js"></script>-->
 
+  <!--spin on scroll-->
+    <div class="wrapper">
+      <div class="circle">
+        <img id="reload" src="img/hot-dog_1f32d.webp" alt="scroll">
+      </div>
+    </div>
+    
+    <div id="fact">-->please hire me<-- </div>
+    
+    <script>
+      const reload = document.getElementById("reload");
+      const fact = document.getElementById("fact");
 
-<!--spin on scroll-->
-<div class="wrapper">
-  <div class="circle">
-      <img id="reload" src="img/hot-dog_1f32d.webp" alt="scroll">
-  </div>
-</div>
-      <div id="fact">-->please hire me<--</div>
-      <script>
-        document.getElementById("reload").onclick = function() {
-            var x = document.getElementById("fact")
-            if(x.style.opacity === "0") {
-            x.style.opacity = "100";
-          }
-          else {
-            x.style.opacity = "0";
-          }
-        }
-     </script>
-<script src="main.js"></script>
+      reload.addEventListener("click", () => {
+        const isHidden = getComputedStyle(fact).opacity == "0";
+
+        anime({
+          targets: fact,
+          opacity: isHidden ? 1 : 0,
+          duration: 300,
+          easing: "easeInOutQuad"
+        });
+      });
+    </script>
+    <script src="main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
 
 
 
@@ -67,36 +66,38 @@
   </div>
   
 <script>
-window.onscroll = function () {
+  window.onscroll = function () {
     scrollRotate();
-};
-function scrollRotate() {
+  };
+  function scrollRotate() {
     let image = document.getElementById("reload");
-    image.style.transform = "rotate(" + window.pageYOffset/2 + "deg)";
+    image.style.transform = "rotate(" + window.pageYOffset / 2 + "deg)";
 
-  let section = document.getElementById("star4_home");
-  section.style.transform = "rotate(" + window.pageYOffset + "deg)";
+    let section = document.getElementById("star4_home");
+    section.style.transform = "rotate(" + window.pageYOffset + "deg)";
 
-  let section1 = document.getElementById("star5_home");
-  section1.style.transform = "rotate(" + window.pageYOffset + "deg)";
+    let section1 = document.getElementById("star5_home");
+    section1.style.transform = "rotate(" + window.pageYOffset + "deg)";
 
-  let section2 = document.getElementById("star6_home");
-  section2.style.transform = "rotate(" + window.pageYOffset + "deg)";
+    let section2 = document.getElementById("star6_home");
+    section2.style.transform = "rotate(" + window.pageYOffset + "deg)";
 
-  let section3 = document.getElementById("star7_home");
-  section3.style.transform = "rotate(" + window.pageYOffset + "deg)";
+    let section3 = document.getElementById("star7_home");
+    section3.style.transform = "rotate(" + window.pageYOffset + "deg)";
 
-  let section4 = document.getElementById("star8_home");
-  section4.style.transform = "rotate(" + window.pageYOffset + "deg)";
+    let section4 = document.getElementById("star8_home");
+    section4.style.transform = "rotate(" + window.pageYOffset + "deg)";
 
-  let section5 = document.getElementById("star9_home");
-  section5.style.transform = "rotate(" + window.pageYOffset + "deg)";
-}
+    let section5 = document.getElementById("star9_home");
+    section5.style.transform = "rotate(" + window.pageYOffset + "deg)";
+  }
 </script>
+
+
 <header>
-<div class="navbar">
-  <div class="logo"><a href="index.html"><img src="img/logo.webp" id="logomeo"></a></div>
-  <ul class="links">
+  <div class="navbar">
+    <div class="logo"><a href="index.html"><img src="img/logo.webp" id="logomeo"></a></div>
+    <ul class="links">
       <li id="dottextnav">
         <div class="dotnav1"></div>
         <a id="textnavbar" href="archive.html">projects</a>
@@ -107,20 +108,20 @@ function scrollRotate() {
       </li>
     </ul>
     <div class="toggle_btn">
-        <i class="fa-solid fa-bars"></i>
+      <i class="fa-solid fa-bars"></i>
     </div>
-</div>
-    
-<div class="dropdown_menu">
-  <li id="dottextnav">
-    <div class="dotnav1"></div>
-    <a id="textnavbar" href="archive.html">projects</a>
-  </li>
-  <li id="dottextnav">
-    <div class="dotnav2"></div>
-    <a id="textnavbar" href="contact.html">contact</a>
-  </li>
-</div>
+  </div>
+
+  <div class="dropdown_menu">
+    <li id="dottextnav">
+      <div class="dotnav1"></div>
+      <a id="textnavbar" href="archive.html">projects</a>
+    </li>
+    <li id="dottextnav">
+      <div class="dotnav2"></div>
+      <a id="textnavbar" href="contact.html">contact</a>
+    </li>
+  </div>
 </header>
 
 
@@ -132,86 +133,87 @@ function scrollRotate() {
   toggleBtn.onclick = function () {
     dropDownMenu.classList.toggle('open')
     const isOpen = dropDownMenu.classList.contains('open')
-
   }
 </script>
 
 <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 <script>
-    $(window).scroll(function(){
-        var $window = $(window),
-        $colorcircle = $('.colorcircle'),
-        $panel = $('.panel');
+  $(window).scroll(function () {
+    var $window = $(window),
+      $colorcircle = $('.colorcircle'),
+      $panel = $('.panel');
 
-        var scroll = $window.scrollTop() + ($window.height() / 3);
-        $panel.each(function (){
-            var $this = $(this);
-            if($this.position().top <= scroll &&
-        $this.position().top + $this.height() > scroll){
-            $colorcircle.removeClass(function (index,css){
-                return (css.match (/(^|\s)color-\S+/g) || []).join('');
-            });
-            $colorcircle.addClass('color-' + $(this).data('color'));
-        }
+    var scroll = $window.scrollTop() + ($window.height() / 3);
+    $panel.each(function () {
+      var $this = $(this);
+      if ($this.position().top <= scroll &&
+        $this.position().top + $this.height() > scroll) {
+        $colorcircle.removeClass(function (index, css) {
+          return (css.match(/(^|\s)color-\S+/g) || []).join('');
         });
-    }).scroll();
+        $colorcircle.addClass('color-' + $(this).data('color'));
+      }
+    });
+  }).scroll();
 </script>
 
-<div class="colorcirclefront"></div>
+
+
 <div class="colorcircle"></div>
-<div class="panel" data-color="white">
 
-<div class="grid2">
-  <div class="content-wrapper">
-    <div id="intro" class="fade-up">
-      <img src="img/hii.webp" id="smallabout" class="fade-up">
-      <i id="j">
-        <span id="gettoknow" class="fade-up"><i id="arrow">⤷</i> let's get to know</span>
-      </i>
-      <div id="changetext" class="fade-up">
-        <i id="blur">me:)</i>
+
+<div class="containersushiplash">
+  <div class="panel" data-color="violet">
+    <div class="grid2">
+      <div class="content-wrapper">
+        <div id="intro" class="fade-up">
+          <img src="img/hii.webp" id="smallabout" class="fade-up">
+          <i id="j">
+            <span id="gettoknow" class="fade-up"><i id="arrow">⤷</i> let's get to know</span>
+          </i>
+          <div id="changetext" class="fade-up">
+            <i id="blur">me:)</i>
+          </div>
+          <img src="img/blink.webp" id="smallabout2" class="fade-up">
+        </div>
+
+        <div class="image-wrapper fade-up">
+          <!--img src="img/aboutclip.webp" id="aboutclip">
+          <img src="img/cows.gif" id="grass"-->
+        </div>
       </div>
-      <img src="img/blink.webp" id="smallabout2" class="fade-up">
-    </div>
-
-    <div class="image-wrapper fade-up">
-      <img src="img/aboutclip.webp"  id="aboutclip" >
-      <img src="img/cows.gif" id="grass">
     </div>
   </div>
 </div>
 
-</div>
-
 <script>
-document.getElementById("blur").onclick = function() {
-var changeText = document.getElementById("blur")
+  document.getElementById("blur").onclick = function () {
+    var changeText = document.getElementById("blur")
 
-  if (changeText.textContent == 'me:)') {
-     changeText.textContent = "minh";
-     changeText.style.color = "#ff20e1";
- }
-  else if (changeText.textContent =='minh') {
-     changeText.textContent = "them";
-     changeText.style.color = "#ff20e1";
- }
- else if (changeText.textContent =='them') {
-     changeText.textContent = "her";
-     changeText.style.color = "#ff20e1";
- }
- else if (changeText.textContent =='her') {
-     changeText.textContent = "me:)";
-     changeText.style.color = "black";
- }
+    if (changeText.textContent == 'me:)') {
+      changeText.textContent = "minh";
+      changeText.style.color = "#ff20e1";
+    }
+    else if (changeText.textContent == 'minh') {
+      changeText.textContent = "them";
+      changeText.style.color = "#ff20e1";
+    }
+    else if (changeText.textContent == 'them') {
+      changeText.textContent = "her";
+      changeText.style.color = "#ff20e1";
+    }
+    else if (changeText.textContent == 'her') {
+      changeText.textContent = "me:)";
+      changeText.style.color = "black";
+    }
 
-}
+  }
 </script>
 
-<!--<img src="img/aboutbasebitmap.png" id="abouttext">-->
+
 
 <!--FLIPCARD-->
-
-<div class="panel" id="panel" data-color="indigo">
+<div class="panel" id="panel" data-color="violet">
   <div class="flip-card fade-up">
     <div class="flip-card__front-side">
       <div class="cccd">
@@ -231,7 +233,7 @@ var changeText = document.getElementById("blur")
               deeply interested in conceptual art, especially works where the audience takes an active role in the
               creative process rather than remaining passive observers.
               <br>
-              
+
               <br>★ Currently a third-year student at the Royal Melbourne Institute of Technology, Nhat Minh continues
               to experiment across multiple platforms and mediums, embracing the fluid boundaries between digital and
               physical forms.
@@ -240,39 +242,66 @@ var changeText = document.getElementById("blur")
         </div>
       </div>
     </div>
-
     <div class="flip-card__back-side">
+      <div id="introduction" class="fade-up">
+        <h2>★ education</h2>
 
+        <p><span class="year">2023-</span>
+          <br>Royal Melbourne Institute of Technology Vietnam: BA of Design - Digital Media
+          <br>◟ Recipient of RMIT Vietnam Academic Achievement Scholarship for current students - Semester 2025-2
+        </p>
+
+        <h2>★ showcases</h2>
+        
+        <p><span class="year">2025</span>
+          <br><span class="important">Beyond 1&0 Exhibition 2025</span>
+          <br>◟ VJ performance at Arcan Saigon
+          <br>◟ VJ performance at RMIT Saigon South
+          <br><span class="year">2024</span>
+          <br><span class="important">RMIT Impact | Online School Showcase</span>
+          <br>◟ <a href="https://www.rmitvn-showcase.com/scd-dm-visual-design/en/quy-tha-ma-bat" target="_blank">Quy tha
+            ma bat ↗</a>
+          <br>◟ <a href="https://www.rmitvn-showcase.com/scd-dm-interaction/en/anatomical-theatre"
+            target="_blank">Anatomical Theatre ↗</a>
+          <br>◟ <a href="https://www.rmitvn-showcase.com/scd-dm-interaction/en/sushi-splash" target="_blank">Sushi
+            Splash ↗</a>
+          <br>◟ <a href="https://www.rmitvn-showcase.com/scd-dm-interaction/en/melotody" target="_blank">Melotody ↗</a>
+          <br><span id="important">SCD Student Work Showcase during Experience Day 2024</span>
+          <br>◟ Scientific Looking - Looking at Science
+        </p>
+      </div>
     </div>
-  </div>
-  <div>
   </div>
 </div>
 
 
-<div class="panel" id="panel" data-color="violet">
+
+<!--div class="panel" id="panel" data-color="violet">
   <section class="grid_abt fade-up">
-    <img src="img/snail.webp" id="face"  class="fade-up">
+    <img src="img/snail.webp" id="face" class="fade-up">
     <div id="intro_logos">
-      <div id="introduction"  class="fade-up">
+      <div id="introduction" class="fade-up">
         <h2>★ education</h2>
-      
-        <p><span id="year">2023-</span>
+
+        <p><span class="year">2023-</span>
           <br>Royal Melbourne Institute of Technology Vietnam: BA of Design - Digital Media
           <br>◟ Recipient of RMIT Vietnam Academic Achievement Scholarship for current students - Semester 2025-2
         </p>
-      
+
         <h2>★ showcases</h2>
-        <p><span id="year">2025</span>
-          <br><span id="important" >Beyond 1&0 Exhibition 2025</span>
+        
+        <p><span class="year">2025</span>
+          <br><span class="important">Beyond 1&0 Exhibition 2025</span>
           <br>◟ VJ performance at Arcan Saigon
           <br>◟ VJ performance at RMIT Saigon South
-
-          <br><span id="year">2024</span>
-          <br><span id="important" >RMIT Impact | Online School Showcase</span>
-          <br>◟ <a href="https://www.rmitvn-showcase.com/scd-dm-visual-design/en/quy-tha-ma-bat" target="_blank">Quy tha ma bat ↗</a>
-          <br>◟ <a href="https://www.rmitvn-showcase.com/scd-dm-interaction/en/anatomical-theatre" target="_blank">Anatomical Theatre ↗</a>
-          <br>◟ <a href="https://www.rmitvn-showcase.com/scd-dm-interaction/en/sushi-splash" target="_blank">Sushi Splash ↗</a>
+          <br><span class="year">2024</span>
+          <br><span class="important">RMIT Impact | Online School Showcase</span>
+          <br>◟ <a href="https://www.rmitvn-showcase.com/scd-dm-visual-design/en/quy-tha-ma-bat" target="_blank">Quy tha
+            ma bat ↗</a>
+          <br>◟ <a href="https://www.rmitvn-showcase.com/scd-dm-interaction/en/anatomical-theatre"
+            target="_blank">Anatomical Theatre ↗</a>
+          <br>◟ <a href="https://www.rmitvn-showcase.com/scd-dm-interaction/en/sushi-splash" target="_blank">Sushi
+            Splash ↗</a>
           <br>◟ <a href="https://www.rmitvn-showcase.com/scd-dm-interaction/en/melotody" target="_blank">Melotody ↗</a>
           <br><span id="important">SCD Student Work Showcase during Experience Day 2024</span>
           <br>◟ Scientific Looking - Looking at Science
@@ -280,75 +309,86 @@ var changeText = document.getElementById("blur")
       </div>
     </div>
   </section>
+</div-->
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
 <script>
-  const fadeUps = document.querySelectorAll('.fade-up');
+  // =========================
+  // FADE UP ANIMATION
+  // =========================
 
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach((entry, index) => {
-      if (entry.isIntersecting) {
-        anime({
-          targets: entry.target,
-          opacity: [0, 1],
-          translateY: [60, 0],
-          duration: 2000,
-          delay: index * 200, // tạo hiệu ứng delay so le
-          easing: 'easeOutExpo'
-        });
-        observer.unobserve(entry.target); // Chỉ animate 1 lần
-      }
-    });
-  }, {
-    threshold: 0.3
+  const fadeUps = document.querySelectorAll(".panel");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          anime({
+            targets: entry.target,
+            opacity: [0, 1],
+            translateY: [60, 0],
+            duration: 1200,
+            delay: index * 100,
+            easing: "easeOutExpo",
+          });
+
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.3,
+    }
+  );
+
+  fadeUps.forEach((el) => {
+    el.style.opacity = "0";
+    observer.observe(el);
   });
-
-  fadeUps.forEach(el => observer.observe(el));
 </script>
 
 
-</main>
-
 <footer>
-<div class="stock-ticker">
-  <ul aria-hidden="true">
-    <li>
-          <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
-          <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
-          <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
+  <div class="stock-ticker">
+    <ul aria-hidden="true">
+      <li>
+        <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
+        <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
+        <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
       </li>
       <li>
-          <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
-          <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
-          <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
+        <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
+        <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
+        <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
       </li>
       <li>
-          <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
-          <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
-          <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
+        <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
+        <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
+        <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
       </li>
-  </ul>
-  <ul aria-hidden="true">
-    <li>
-          <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
-          <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
-          <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
+    </ul>
+    <ul aria-hidden="true">
+      <li>
+        <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
+        <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
+        <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
       </li>
       <li>
-          <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
-          <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
-          <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
+        <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
+        <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
+        <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
       </li>
       <li>
-          <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
-          <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
-          <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
+        <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
+        <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
+        <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
       </li>
-  </ul>
-</div>
+    </ul>
+  </div>
 </footer>
 
-
-
+</main>
 </body>
 </html>

@@ -11,48 +11,58 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <link rel="icon" type="image/x-icon" href="img/buttton-green.png">
-
 </head>
+
+
 <!--spin on scroll-->
 <div class="wrapper">
   <div class="circle">
-      <img id="reload" src="img/hot-dog_1f32d.webp" alt="scroll">
+    <img id="reload" src="img/hot-dog_1f32d.webp" alt="scroll">
   </div>
 </div>
+
 <div id="fact">-->please hire me<-- </div>
+
     <script>
-      document.getElementById("reload").onclick = function () {
-        var x = document.getElementById("fact")
-        if (x.style.opacity === "0") {
-          x.style.opacity = "100";
-        }
-        else {
-          x.style.opacity = "0";
-        }
-      }
+      const reload = document.getElementById("reload");
+      const fact = document.getElementById("fact");
+
+      reload.addEventListener("click", () => {
+        const isHidden = getComputedStyle(fact).opacity == "0";
+
+        anime({
+          targets: fact,
+          opacity: isHidden ? 1 : 0,
+          duration: 300,
+          easing: "easeInOutQuad"
+        });
+      });
     </script>
     <script src="main.js"></script>
-    <main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+
+
+<main>
       <div class="scrollbg">
-    <section>
-      <img src="img/asterisk.webp" id="star4_home">
-    </section>
-    <section>
-      <img src="img/asterisk.webp" id="star5_home">
-    </section>
-    <section>
-      <img src="img/asterisk.webp" id="star6_home">
-    </section>
-    <section>
-      <img src="img/asterisk.webp" id="star7_home">
-    </section>
-    <section>
-      <img src="img/asterisk.webp" id="star8_home">
-    </section>
-    <section>
-      <img src="img/asterisk.webp" id="star9_home">
-    </section>
-  </div>
+        <section>
+          <img src="img/asterisk.webp" id="star4_home">
+        </section>
+        <section>
+          <img src="img/asterisk.webp" id="star5_home">
+        </section>
+        <section>
+          <img src="img/asterisk.webp" id="star6_home">
+        </section>
+        <section>
+          <img src="img/asterisk.webp" id="star7_home">
+        </section>
+        <section>
+          <img src="img/asterisk.webp" id="star8_home">
+        </section>
+        <section>
+          <img src="img/asterisk.webp" id="star9_home">
+        </section>
+      </div>
 
       <script>
         window.onscroll = function () {
@@ -147,276 +157,287 @@
         }).scroll();
       </script>
 
-      <div class="colorcircle_mannequin"></div>
+      <div class="colorcircle"></div>
 
       <!--viewmore-->
       <div>
         <i id="j">
           <span id="gettoknow_prj" class="viewmore">
-
             <a id="view" href="archive.html">view more<i id="arrow">↗</i></a>
           </span>
         </i>
       </div>
+
       <!--GALLERY-->
       <div class="description">
-
         <div class="abstract fade-up">
-          <h3 id="h3_mannequin" class="fade-up"><i id="arrow">↘</i> In 2022, I began learning Blender, which sparked my interest in 3D
-            art and modeling. I'm passionate about creating 3D objects and blending them with 2D art, a technique that
-            adds a unique touch and enhances the immersive quality of my work. I've also experimented with animation,
-            which I find incredibly intriguing.
-            <br>🧑‍🎤🪡👩🏼‍🦽🌯🧊
+          <h3 class="fade-up"><i id="arrow">↘</i> Since 2022, I have been learning Blender, which sparked my interest in 3D art in general. I became passionate about
+          creating 3D objects and integrating them with 2D visuals to add uniqueness and a whimsical touch to my work. I also
+          explored animation, a field that continues to fascinate me.
+          <br>
+          <br>
+          Over time, I have focused on developing my 3D skills with an emphasis on achieving realism. This journey has led me to
+          deepen my understanding of lighting, materials, and environmental design.
+            
           </h3>
         </div>
       </div>
 
       
-<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-<script>
-  const fadeUps = document.querySelectorAll('.fade-up');
-
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach((entry, index) => {
-      if (entry.isIntersecting) {
-        anime({
-          targets: entry.target,
-          opacity: [0, 1],
-          translateY: [60, 0],
-          duration: 2000,
-          delay: index * 200, // tạo hiệu ứng delay so le
-          easing: 'easeOutExpo',
-          
-        });
-        
-        observer.unobserve(entry.target); // Chỉ animate 1 lần
-      }
-    });
-  }, {
-    threshold: 0.3
-  });
-  fadeUps.forEach(el => observer.observe(el));
-</script>
-
 
       <div class="containersushiplash">
-
-        <div class="panel" data-color="white">
+      
+        <div class="panel" data-color="violet">
           <div class="item">
             <div class="item-img">
               <img src="img/design (2).webp" alt="" />
             </div>
-            <h4 id="button_name">Designer's Room<h4>
-
+            <h4 id="button_name">Designer's Room</h4>
           </div>
         </div>
-
-        <div class="panel" data-color="violet">
-          <div class="item">
-            <div class="item-img" id="slider-container">
-
-              <div class="slider">
-                <img src="img/Artboard 9.1.webp"  alt="" />
-                <img src="img/flipphone.webp" alt="" />
-
-              </div>
-
-            </div>
-            <!--button class="prev">&#10094;</button>
-      <button class="next">&#10095;</button-->
-            <h4 id="button_name">Flipphone Design Process<h4>
-          </div>
-        </div>
-
+      
         <div class="panel" data-color="white">
           <div class="item">
+            <div class="item-img" id="slider-container">
+      
+              <div class="slider">
+                <img src="img/Artboard 9.1.webp" alt="" />
+                <img src="img/flipphone.webp" alt="" />
+                <img src="img/Artboard phone1.webp" alt="" />
+              </div>
+            </div>
+            <h4 id="button_name">Flip Phone Design Process</h4>
+          </div>
+        </div>
+      
+        <div class="panel" data-color="violet">
+          <div class="item">
             <div class="item-img">
-              <iframe width="853" height="480" src="https://www.youtube.com/embed/YOEkAvF8ENM"
-                title="FLIP PHONE PROJECT 2022" frameborder="0"
+              <iframe width="853" height="480" src="https://www.youtube.com/embed/YOEkAvF8ENM" title="FLIP PHONE PROJECT 2022"
+                frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
             <h4 id="button_name">Full Video</h4>
           </div>
         </div>
-
-        <div class="panel" data-color="violet">
-          <div class="item">
-            <div class="item-img">
-              <img src="img/Artboard phone1.webp" alt="" />
-            </div>
-            <h4 id="button_name">Flipphone New<h4>
-          </div>
-        </div>
-
+      
         <div class="panel" data-color="white">
           <div class="item">
             <div class="item-img">
               <img src="img/avatarlumiere (1) (1).png" alt="" />
             </div>
-            <h4 id="button_name">Avatar Lumiere<h4>
+            <h4 id="button_name">Lumiere's Avatar</h4>
           </div>
         </div>
-
+      
         <!--div class="panel" data-color="white">
-          <div class="item">
-            <div class="item-img">
-              <iframe width="853" height="480" src="https://www.youtube.com/embed/kLftblygsqc" title="cat | BLENDER"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
-            <h4 id="button_name">Futuristic 3D Cat<h4>
-          </div>
-        </div>
-
-        <div class="panel" data-color="white">
-          <div class="item">
-            <div class="item-img">
-              <iframe width="315" height="560" src="https://www.youtube.com/embed/q-0lZ1XuSuk" title="GAME CAT| BLENDER" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
-            <h4 id="button_name">Futuristic 3D Cat Game<h4>
-          </div>
-        </div-->
-
-        <div class="panel" data-color="white">
-          <div class="item">
-            <div class="item-img">
-              <iframe width="315" height="560" src="https://www.youtube.com/embed/mITE-7NhyIk" title="NHIP DIEU CUOC SONG | RIGGED BY MIXAMO | BLENDER" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
-            <h4 id="button_name">Testing Rigging Animation with Mixamo<h4>
-          </div>
-        </div>
-
+                <div class="item">
+                  <div class="item-img">
+                    <iframe width="853" height="480" src="https://www.youtube.com/embed/kLftblygsqc" title="cat | BLENDER"
+                      frameborder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                  </div>
+                  <h4 id="button_name">Futuristic 3D Cat<h4>
+                </div>
+              </div>
+      
+              <div class="panel" data-color="white">
+                <div class="item">
+                  <div class="item-img">
+                    <iframe width="315" height="560" src="https://www.youtube.com/embed/q-0lZ1XuSuk" title="GAME CAT| BLENDER" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                  </div>
+                  <h4 id="button_name">Futuristic 3D Cat Game<h4>
+                </div>
+              </div-->
+      
         <div class="panel" data-color="violet">
           <div class="item">
             <div class="item-img">
-              <img src="img/robotarm.webp"alt="" />
+              <video class="video-background" autoplay loop muted playsinline>
+                <source src="img/hiphopdephon.mp4" type="video/mp4" />
+              </video>
             </div>
-            <h4 id="button_name">Robot Arm<h4>
+            <h4 id="button_name">Character Design and Rigging with Mixamo</h4>
           </div>
         </div>
-
+      
+        <div class="panel" data-color="white">
+          <div class="item">
+            <div class="item-img">
+              <img src="img/robotarm.webp" class="no-border" alt="" />
+            </div>
+            <h4 id="button_name">Robot Arm</h4>
+          </div>
+        </div>
+      
         <div class="panel" data-color="violet">
           <div class="item">
             <div class="item-img">
               <img src="img/tet0000-0200.gif" alt="" />
             </div>
-            <h4 id="button_name">Robot Arm for VFX<h4>
+            <h4 id="button_name">Robot Arm for VFX</h4>
           </div>
         </div>
-
-        <div class="panel" data-color="violet">
+      
+        <div class="panel" data-color="white">
           <div class="item">
             <div class="item-img">
               <img src="img/loveee (1) (1).png" alt="" />
             </div>
-            <h4 id="button_name">Tamagotchi<h4>
-
+            <h4 id="button_name">Tamagotchi</h4>
           </div>
         </div>
-
+      
         <!--div class="panel" data-color="white">
-          <div class="item">
-            <div class="item-img">
-              <iframe width="853" height="480" src="https://www.youtube.com/embed/e75xqtVZ9pc" title="METALHEAD" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
-            <h4 id="button_name">Experimental<h4>
-          </div>
-        </div-->
-
+                <div class="item">
+                  <div class="item-img">
+                    <iframe width="853" height="480" src="https://www.youtube.com/embed/e75xqtVZ9pc" title="METALHEAD" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                  </div>
+                  <h4 id="button_name">Experimental<h4>
+                </div>
+              </div-->
+      
         <!--div class="panel" data-color="violet">
-          <div class="item">
-            <div class="item-img">
-              <img src="img/aquamac11.png" alt="" />
-            </div>
-            <h4 id="button_name">Macquarium<h4>
-          </div>
-        </div-->
-
+                <div class="item">
+                  <div class="item-img">
+                    <img src="img/aquamac11.png" alt="" />
+                  </div>
+                  <h4 id="button_name">Macquarium<h4>
+                </div>
+              </div-->
+      
         <div class="panel" data-color="violet">
           <div class="item">
             <div class="item-img">
               <img src="img/s4045122_A3_Cachet.webp" alt="" />
             </div>
-            <h4 id="button_name">Cachet<h4>
+            <h4 id="button_name">Cachet</h4>
+          </div>
+        </div>
+
+    
+
+        <div class="panel" data-color="white">
+          <div class="item">
+            <div class="item-img">
+              <video class="video-background" autoplay loop muted playsinline>
+                <source src="img/Pre-comp 2.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <h4 id="button_name">Tiệm bánh Huy Ký</h4>
           </div>
         </div>
 
         <div class="panel" data-color="violet">
           <div class="item">
-            <div class="item-img">
-              <img src="img/story.webp" alt="" />
+            <div class="item-img" id="slider-container">
+      
+              <div class="slider">
+                <img src="img/532569594_1408211933616088_199510094036079663_n.jpg" alt="" />
+                <img src="img/537812664_1452287729347400_1601622055151794215_n.jpg" alt="" />
+                <img src="img/541061812_733728382993164_3714507802211643658_n.jpg" alt="" />
+              </div>
+      
             </div>
-            <h4 id="button_name">Dissection<h4>
+            <h4 id="button_name">Lighting and Compositing for 'Veil of Ash'</h4>
           </div>
         </div>
-
-
+      
+        <div class="panel" data-color="white">
+          <div class="item">
+            <div class="item-img">
+              <iframe title="vimeo-player" src="https://player.vimeo.com/video/1139313782?h=d02d4a1fe8" width="640" height="360" frameborder="0" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"   allowfullscreen></iframe>
+            </div>
+            <h4 id="button_name">Full Animation</h4>
+          </div>
+        </div>
+      
       </div>
-</div>
+      
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/intersection-observer@0.12.2/intersection-observer.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-<script>
-  const items = Array.from(document.querySelectorAll(".item"));
 
-  items.forEach((item) => {
-    const img = item.querySelector(".item-img");
-    gsap.set(img, { scale: 0 });
+<script>
+  // =========================
+  // FADE UP ANIMATION
+  // =========================
+
+  const fadeUps = document.querySelectorAll(".panel");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          anime({
+            targets: entry.target,
+            opacity: [0, 1],
+            translateY: [60, 0],
+            duration: 1200,
+            delay: index * 100,
+            easing: "easeOutExpo",
+          });
+
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.3,
+    }
+  );
+
+  fadeUps.forEach((el) => {
+    el.style.opacity = "0";
+    observer.observe(el);
   });
+
+  // =========================
+  // SCALE EFFECT
+  // =========================
+
+  const items = document.querySelectorAll(".item");
 
   function setScale() {
     items.forEach((item) => {
       const img = item.querySelector(".item-img");
+
+      if (!img) return;
+
       const rect = item.getBoundingClientRect();
 
-      const viewportHeight = window.innerHeight;
+      const viewportCenter = window.innerHeight / 2;
       const itemCenter = rect.top + rect.height / 2;
 
-      const distanceFromCenter = Math.abs(viewportHeight / 2 - itemCenter);
+      const distance = Math.abs(viewportCenter - itemCenter);
 
-      const progress = distanceFromCenter / (viewportHeight / 2);
+      const progress = distance / viewportCenter;
 
       const adjustedProgress = Math.pow(progress, 2);
 
       let scale = 1 - adjustedProgress * 0.5;
-      scale = Math.max(0, Math.min(scale, 1));
 
-      gsap.to(img, { scale: scale, duration: 0.1 });
+      scale = Math.max(0.5, Math.min(scale, 1));
+
+      gsap.set(img, {
+        scale: scale,
+      });
     });
   }
 
+  // chạy lần đầu
   setScale();
 
+  // cập nhật khi scroll
   window.addEventListener("scroll", setScale);
-  let scroll = 0;
-  let oldScrollY = 0;
-  let roundedScrollY = 0;
-  const lerpAmount = 0.1;
 
-  function lerp(start, end, t) {
-    return start * (1 - t) + end * i;
-  }
-
-  function animate() {
-    requestAnimationFrame(animate);
-
-    roundedScrollY = lerp(roundedScrollY, scrollY, lerpAmount);
-
-    document.querySelector(".container").style.transform = 'translate3d(0, ${-roundedScrollY}px, 0)';
-
-    setScale();
-  }
-
-  window.addEventListener("scroll", (e) => {
-    scrollY = window.scrollY;
-  });
-
-  animate();
+  // cập nhật khi resize
+  window.addEventListener("resize", setScale);
 </script>
 
 </main>
 </body>
-
 </html>

@@ -9,129 +9,106 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-
   <link rel="icon" type="image/x-icon" href="img/buttton-green.png">
-
 </head>
 
 <body onload="move('element')">
 
   <!--spin on scroll-->
-  <div class="wrapper">
-    <div class="circle">
-      <img id="reload" src="img/hot-dog_1f32d.webp" alt="scroll">
+    <div class="wrapper">
+      <div class="circle">
+        <img id="reload" src="img/hot-dog_1f32d.webp" alt="scroll">
+      </div>
     </div>
-  </div>
-  <div id="fact">-->please hire me<-- </div>
+    
+    <div id="fact">-->please hire me<-- </div>
+    
+    <script>
+      const reload = document.getElementById("reload");
+      const fact = document.getElementById("fact");
+
+      reload.addEventListener("click", () => {
+        const isHidden = getComputedStyle(fact).opacity == "0";
+
+        anime({
+          targets: fact,
+          opacity: isHidden ? 1 : 0,
+          duration: 300,
+          easing: "easeInOutQuad"
+        });
+      });
+    </script>
+    <script src="main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+
+
+  <main>
+    <!--stardusk rotation-->
+      <div class="scrollbg">
+        <section>
+          <img src="img/asterisk.webp" id="star4_home">
+        </section>
+        <section>
+          <img src="img/asterisk.webp" id="star5_home">
+        </section>
+        <section>
+          <img src="img/asterisk.webp" id="star6_home">
+        </section>
+        <section>
+          <img src="img/asterisk.webp" id="star7_home">
+        </section>
+        <section>
+          <img src="img/asterisk.webp" id="star8_home">
+        </section>
+        <section>
+          <img src="img/asterisk.webp" id="star9_home">
+        </section>
+      </div>
+
+
       <script>
-        document.getElementById("reload").onclick = function () {
-          var x = document.getElementById("fact")
-          if (x.style.opacity === "0") {
-            x.style.opacity = "100";
-          }
-          else {
-            x.style.opacity = "0";
-          }
+        window.onscroll = function () {
+          scrollRotate();
+        };
+        function scrollRotate() {
+          let image = document.getElementById("reload");
+          image.style.transform = "rotate(" + window.pageYOffset / 2 + "deg)";
+
+          let section = document.getElementById("star4_home");
+          section.style.transform = "rotate(" + window.pageYOffset + "deg)";
+
+          let section1 = document.getElementById("star5_home");
+          section1.style.transform = "rotate(" + window.pageYOffset + "deg)";
+
+          let section2 = document.getElementById("star6_home");
+          section2.style.transform = "rotate(" + window.pageYOffset + "deg)";
+
+          let section3 = document.getElementById("star7_home");
+          section3.style.transform = "rotate(" + window.pageYOffset + "deg)";
+
+          let section4 = document.getElementById("star8_home");
+          section4.style.transform = "rotate(" + window.pageYOffset + "deg)";
+
+          let section5 = document.getElementById("star9_home");
+          section5.style.transform = "rotate(" + window.pageYOffset + "deg)";
+
+          let section6 = document.getElementById("star10_home");
+          section6.style.filter = "hue-rotate(" + window.pageYOffset + "deg)";
         }
       </script>
-      <script src="main.js"></script>
-
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-<script>
-  document.getElementById("reload").onclick = function () {
-    var fact = document.getElementById("fact");
-    if (fact.style.opacity === "0" || fact.style.opacity === "") {
-      anime({
-        targets: '#fact',
-        opacity: [0, 1],
-        duration: 500,
-        easing: 'easeInOutQuad'
-      });
-    } else {
-      anime({
-        targets: '#fact',
-        opacity: [1, 0],
-        duration: 500,
-        easing: 'easeInOutQuad'
-      });
-    }
-  };
-
-  
-</script>
 
 
-
-      <main>
-        <div class="scrollbg">
-          <section>
-            <img src="img/asterisk.webp" id="star4_home">
-          </section>
-          <section>
-            <img src="img/asterisk.webp" id="star5_home">
-          </section>
-          <section>
-            <img src="img/asterisk.webp" id="star6_home">
-          </section>
-          <section>
-            <img src="img/asterisk.webp" id="star7_home">
-          </section>
-          <section>
-            <img src="img/asterisk.webp" id="star8_home">
-          </section>
-          <section>
-            <img src="img/asterisk.webp" id="star9_home">
-          </section>
-        </div>
-
-        <script>
-          
-          window.onscroll = function () {
-            scrollRotate();
-          };
-          function scrollRotate() {
-            let image = document.getElementById("reload");
-            image.style.transform = "rotate(" + window.pageYOffset / 2 + "deg)";
-
-            let section = document.getElementById("star4_home");
-            section.style.transform = "rotate(" + window.pageYOffset + "deg)";
-
-            let section1 = document.getElementById("star5_home");
-            section1.style.transform = "rotate(" + window.pageYOffset + "deg)";
-
-            let section2 = document.getElementById("star6_home");
-            section2.style.transform = "rotate(" + window.pageYOffset + "deg)";
-
-            let section3 = document.getElementById("star7_home");
-            section3.style.transform = "rotate(" + window.pageYOffset + "deg)";
-
-            let section4 = document.getElementById("star8_home");
-            section4.style.transform = "rotate(" + window.pageYOffset + "deg)";
-
-            let section5 = document.getElementById("star9_home");
-            section5.style.transform = "rotate(" + window.pageYOffset + "deg)";
-
-            let section6 = document.getElementById("star10_home");
-            section6.style.filter = "hue-rotate(" + window.pageYOffset + "deg)";
-          }
-        </script>
-
-
-
-        <header>
-          <div class="navbar">
-            <div class="logo"><a href="index.html"><img src="img/logo.webp" id="logomeo"></a></div>
-            <!--<a href="#" class="action_btn"></a>
-        <div class="toggle_btn">
-            <i class="fa-solid fa-bars"></i>
-        </div>-->
-          </div>
-        </header>
+  <header>
+    <div class="navbar">
+      <div class="logo"><a href="index.html"><img src="img/logo.webp" id="logomeo"></a></div>
+    </div>
+  </header>
 
 
         <!--change colors-->
         <div class="colorcirclefront"></div>
         <div class="colorcircle"></div>
+
         <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
         <script>
           $(window).scroll(function () {
@@ -152,7 +129,7 @@
             });
           }).scroll();
         </script>
-
+        
         <script>
           var h2 = document.getElementById('header');
 
@@ -175,15 +152,12 @@
               element.style.opacity = opacity;
             }
           }
-
           function scrollHandler() {
             fadeOutOnScroll(h2);
           }
-
           window.addEventListener('scroll', scrollHandler);
         </script>
-
-
+        
         <script>
           const appear = document.querySelector('.appear');
           const cb = function (entries) {
@@ -202,150 +176,124 @@
             scrollRotate();
           };
         </script>
+        
+    <div class="containersushiplash">
+      <div class="panel" id="panel1" data-color="violet">
+        <div class="hero-layout">
 
-        <div class="panel" id="panel1" data-color="violet">
-          <div id="name4">
-            <img class="computer1" src="img/name.gif">
-            <img class="computer" src="img/computer.webp">
-          </div>
-          <section class="grid">
-
-            <ul class="links">
-              <li id="name1">
-                <img class="folder" src="img/folder.webp">
-                <div class="dotandtext">
-                  <div class="dot1"></div>
-                  <a id="texthomepage" href="archive.html">projects</a>
-                </div>
-              </li>
-              <li id="name2">
-                <img class="folder" src="img/folder.webp">
-                <div class="dotandtext">
-                  <div class="dot2"></div>
-                  <a id="texthomepage" href="about.html">about</a>
-                </div>
-              </li>
-              <li id="name3">
-                <img class="folder" src="img/folder.webp">
-                <div class="dotandtext">
-                  <div class="dot3"></div>
-                  <a id="texthomepage" href="contact.html">contact</a>
-                </div>
-              </li>
-            </ul>
-          </section>
+        <div id="name4">
+          <img class="computer1" src="img/name.gif">
+          <img class="computer" src="img/computer.webp">
         </div>
 
+        <section class="grid">
+          
+          <ul class="links">
+            <li id="name1">
+              <img class="folder" src="img/folder.webp">
+              <div class="dotandtext">
+                <div class="dot1"></div>
+                <a id="texthomepage" href="archive.html">projects</a>
+              </div>
+            </li>
+            <li id="name2">
+              <img class="folder" src="img/folder.webp">
+              <div class="dotandtext">
+                <div class="dot2"></div>
+                <a id="texthomepage" href="about.html">about</a>
+              </div>
+            </li>
+            <li id="name3">
+              <img class="folder" src="img/folder.webp">
+              <div class="dotandtext">
+                <div class="dot3"></div>
+                <a id="texthomepage" href="contact.html">contact</a>
+              </div>
+            </li>
+          </ul>
+
+        </section>
+        </div>
+        
+      </div>
+    </div>
+
+        
 <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
 <script>
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        anime({
-          targets: '.panel .grid li',
-          opacity: [0, 1],
-          translateY: [40, 0],
-          delay: anime.stagger(800),
-          duration: 2000,
-          easing: 'easeOutExpo'
-        });
-        observer.disconnect(); // chỉ chạy một lần
-      }
-    });
-  }, { threshold: 0.3 });
+  // =========================
+  // FADE UP ANIMATION
+  // =========================
 
-  const targetPanel = document.querySelector('.panel');
-  if (targetPanel) {
-    observer.observe(targetPanel);
-  }
+  const fadeUps = document.querySelectorAll(".panel");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          anime({
+            targets: entry.target,
+            opacity: [0, 1],
+            translateY: [60, 0],
+            duration: 1200,
+            delay: index * 100,
+            easing: "easeOutExpo",
+          });
+
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.3,
+    }
+  );
+
+  fadeUps.forEach((el) => {
+    el.style.opacity = "0";
+    observer.observe(el);
+  });
 </script>
 
+<footer>
+  <div class="stock-ticker">
+    <ul aria-hidden="true">
+      <li>
+        <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
+        <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
+        <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
+      </li>
+      <li>
+        <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
+        <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
+        <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
+      </li>
+      <li>
+        <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
+        <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
+        <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
+      </li>
+    </ul>
+    <ul aria-hidden="true">
+      <li>
+        <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
+        <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
+        <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
+      </li>
+      <li>
+        <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
+        <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
+        <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
+      </li>
+      <li>
+        <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
+        <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
+        <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
+      </li>
+    </ul>
+  </div>
+</footer>
 
-
-
-      </main>
-      <footer>
-        <div class="stock-ticker">
-          <ul aria-hidden="true">
-            <li>
-              <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
-              <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
-              <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
-            </li>
-            <li>
-              <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
-              <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
-              <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
-            </li>
-            <li>
-              <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
-              <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
-              <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
-            </li>
-          </ul>
-          <ul aria-hidden="true">
-            <li>
-              <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
-              <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
-              <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
-            </li>
-            <li>
-              <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
-              <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
-              <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
-            </li>
-            <li>
-              <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
-              <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
-              <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
-            </li>
-          </ul>
-        </div>
-      </footer>
-      <div class="cows">
-        <img src="img/cows.gif" id="idk">
-      </div>
-
-<img src="img/meo.png" id="flyingObject" alt="flying" />
-
-<script>
-  const flying = document.getElementById("flyingObject");
-
-  let posX = Math.random() * window.innerWidth;
-  let posY = Math.random() * window.innerHeight;
-  let velX = 2 + Math.random() * 2;
-  let velY = 2 + Math.random() * 2;
-  let angle = 0;
-  let spinBoost = 0;
-
-  function moveFlyingObject() {
-    posX += velX;
-    posY += velY;
-
-    // Bounce + tăng spin khi va chạm
-    if (posX <= 0 || posX + flying.offsetWidth >= window.innerWidth) {
-      velX *= -1;
-      spinBoost += 15; // Xoay mạnh hơn
-    }
-    if (posY <= 0 || posY + flying.offsetHeight >= window.innerHeight) {
-      velY *= -1;
-      spinBoost += 15;
-    }
-
-    // Giảm spin boost dần về 0
-    if (spinBoost > 0) spinBoost *= 0.95;
-
-    angle += 2 + spinBoost;
-
-    flying.style.transform = `translate(${posX}px, ${posY}px) rotate(${angle}deg)`;
-
-    requestAnimationFrame(moveFlyingObject);
-  }
-
-  moveFlyingObject();
-</script>
-
-      
+</main>     
 </body>
-
 </html>

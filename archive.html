@@ -7,29 +7,36 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="icon" type="image/x-icon" href="img/buttton-green.png">
-
 </head>
+
 <body>
     <!--spin on scroll-->
-<div class="wrapper">
-        <div class="circle">
-      <img id="reload" src="img/hot-dog_1f32d.webp" alt="scroll">
-        </div>
-</div>
-</div>
-<div id="fact">-->please hire me<--</div>
-<script>
-  document.getElementById("reload").onclick = function() {
-      var x = document.getElementById("fact")
-      if(x.style.opacity === "0") {
-      x.style.opacity = "100";
-    }
-    else {
-      x.style.opacity = "0";
-    }
-  }
-</script>
-<script src="main.js"></script>
+    <div class="wrapper">
+      <div class="circle">
+        <img id="reload" src="img/hot-dog_1f32d.webp" alt="scroll">
+      </div>
+    </div>
+    
+    <div id="fact">-->please hire me<-- </div>
+    
+    <script>
+      const reload = document.getElementById("reload");
+      const fact = document.getElementById("fact");
+
+      reload.addEventListener("click", () => {
+        const isHidden = getComputedStyle(fact).opacity == "0";
+
+        anime({
+          targets: fact,
+          opacity: isHidden ? 1 : 0,
+          duration: 300,
+          easing: "easeInOutQuad"
+        });
+      });
+    </script>
+    <script src="main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+
 
 <main>
   <div class="scrollbg">
@@ -54,55 +61,41 @@
   </div>
   
 <script>
-window.onscroll = function () {
+  window.onscroll = function () {
     scrollRotate();
-};
-function scrollRotate() {
+  };
+  function scrollRotate() {
     let image = document.getElementById("reload");
-    image.style.transform = "rotate(" + window.pageYOffset/2 + "deg)";
+    image.style.transform = "rotate(" + window.pageYOffset / 2 + "deg)";
 
-  let section = document.getElementById("star4_home");
-  section.style.transform = "rotate(" + window.pageYOffset + "deg)";
+    let section = document.getElementById("star4_home");
+    section.style.transform = "rotate(" + window.pageYOffset + "deg)";
 
-  let section1 = document.getElementById("star5_home");
-  section1.style.transform = "rotate(" + window.pageYOffset + "deg)";
+    let section1 = document.getElementById("star5_home");
+    section1.style.transform = "rotate(" + window.pageYOffset + "deg)";
 
-  let section2 = document.getElementById("star6_home");
-  section2.style.transform = "rotate(" + window.pageYOffset + "deg)";
+    let section2 = document.getElementById("star6_home");
+    section2.style.transform = "rotate(" + window.pageYOffset + "deg)";
 
-  let section3 = document.getElementById("star7_home");
-  section3.style.transform = "rotate(" + window.pageYOffset + "deg)";
+    let section3 = document.getElementById("star7_home");
+    section3.style.transform = "rotate(" + window.pageYOffset + "deg)";
 
-  let section4 = document.getElementById("star8_home");
-  section4.style.transform = "rotate(" + window.pageYOffset + "deg)";
+    let section4 = document.getElementById("star8_home");
+    section4.style.transform = "rotate(" + window.pageYOffset + "deg)";
 
-  let section5 = document.getElementById("star9_home");
-  section5.style.transform = "rotate(" + window.pageYOffset + "deg)";
+    let section5 = document.getElementById("star9_home");
+    section5.style.transform = "rotate(" + window.pageYOffset + "deg)";
 
-  let section6 = document.getElementById("star10_home");
-  section6.style.filter = "hue-rotate(" + window.pageYOffset + "deg)";
-}
+    let section6 = document.getElementById("star10_home");
+    section6.style.filter = "hue-rotate(" + window.pageYOffset + "deg)";
+  }
 </script>
 
+
     <header>
-        <div class="navbar">
-          <div class="logo"><a href="index.html"><img src="img/logo.webp" id="logomeo"></a></div>
-          <ul class="links">
-              <li id="dottextnav">
-                <div class="dotnav3"></div>
-            <a id="textnavbar" href="about.html">about</a>
-              </li>
-              <li id="dottextnav">
-                <div class="dotnav2"></div>
-                <a id="textnavbar" href="contact.html">contact</a>
-              </li>
-            </ul>
-            <div class="toggle_btn">
-                <i class="fa-solid fa-bars"></i>
-            </div>
-        </div>
-            
-        <div class="dropdown_menu">
+      <div class="navbar">
+        <div class="logo"><a href="index.html"><img src="img/logo.webp" id="logomeo"></a></div>
+        <ul class="links">
           <li id="dottextnav">
             <div class="dotnav3"></div>
             <a id="textnavbar" href="about.html">about</a>
@@ -111,227 +104,226 @@ function scrollRotate() {
             <div class="dotnav2"></div>
             <a id="textnavbar" href="contact.html">contact</a>
           </li>
+        </ul>
+        <div class="toggle_btn">
+          <i class="fa-solid fa-bars"></i>
         </div>
-        </header>
+      </div>
+    
+      <div class="dropdown_menu">
+        <li id="dottextnav">
+          <div class="dotnav3"></div>
+          <a id="textnavbar" href="about.html">about</a>
+        </li>
+        <li id="dottextnav">
+          <div class="dotnav2"></div>
+          <a id="textnavbar" href="contact.html">contact</a>
+        </li>
+      </div>
+    </header>
         
-        <script>
-          const toggleBtn = document.querySelector('.toggle_btn')
-          const toggleBtnIcon = document.querySelector('.toggle_btn i')
-          const dropDownMenu = document.querySelector('.dropdown_menu')
-        
-          toggleBtn.onclick = function () {
-            dropDownMenu.classList.toggle('open')
-            const isOpen = dropDownMenu.classList.contains('open')
-        
-          }
-        </script>
+    <script>
+      const toggleBtn = document.querySelector('.toggle_btn')
+      const toggleBtnIcon = document.querySelector('.toggle_btn i')
+      const dropDownMenu = document.querySelector('.dropdown_menu')
 
-</main>
+      toggleBtn.onclick = function () {
+        dropDownMenu.classList.toggle('open')
+        const isOpen = dropDownMenu.classList.contains('open')
+      }
+    </script>
 
-<!--change colors-->
-<div class="colorcirclefront"></div>
-<div class="colorcircle_prj"></div>
-<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-<script>
-    $(window).scroll(function(){
-        var $window = $(window),
-        $colorcircle = $('.colorcircle'),
-        $panel = $('.panel');
+  
+    <div class="colorcircle_prj"></div>
 
-        var scroll = $window.scrollTop() + ($window.height() / 3);
-        $panel.each(function (){
-            var $this = $(this);
-            if($this.position().top <= scroll &&
-        $this.position().top + $this.height() > scroll){
-            $colorcircle.removeClass(function (index,css){
-                return (css.match (/(^|\s)color-\S+/g) || []).join('');
-            });
-            $colorcircle.addClass('color-' + $(this).data('color'));
-        }
-        });
-    }).scroll();
-</script>
-<!---->
 
-<div class="panel" data-color="indigo">
-  <section class="gridprj fade-up">
-    <div class="imgtxt fade-up">
-      <div id="tooltip">
-        <span id="tooltipText">7/2023</span>
-        <img id="image" class="fade-up"src="img/image1.png">
-      </div>
-      <a id="txt"class="fade-up" href="mannequin.html">prj_mannequin.zip</a>
-    </div>
+<div class="containersushiplash">
+  <div class="panel" data-color="indigo">
+    <section class="gridprj fade-up">
 
-    <div class="imgtxt fade-up">
-      <div id="tooltip">
-        <span id="tooltipText">2023-2025</span>
-        <img id="image"class="fade-up" src="img/image1.png">
-      </div>
-      <a id="txt"class="fade-up" href="3dmodeling.html">3d_modeling.zip</a>
-    </div>
-
-    <div class="imgtxt fade-up">
-      <div id="tooltip">
-        <span id="tooltipText">4/2024</span>
-        <img id="image"class="fade-up" src="img/image1.png">
-      </div>
-      <a id="txt"class="fade-up" href="2dillustration.html">2d_illustration.zip</a>
-    </div>
-
-    <div class="imgtxt fade-up">
-      <div id="tooltip">
-        <span id="tooltipText">9/2025</span>
-        <img id="image" class="fade-up"src="img/image1.png">
-      </div>
-      <a id="txt"class="fade-up" href="mapping.html">project_mapping.zip</a>
-    </div>
-
-    <div class="imgtxt fade-up">
-      <div id="tooltip">
-        <span id="tooltipText">12/2024</span>
-        <img id="image" class="fade-up" src="img/image1.png">
-      </div>
-      <a id="txt" class="fade-up" href="saodo.html">sao_đỏ.zip</a>
-    </div>
-
-    <div class="imgtxt fade-up">
-      <div id="tooltip">
-        <span id="tooltipText">1/2025</span>
-        <img id="image"class="fade-up" src="img/image1.png">
-      </div>
-      <a id="txt" class="fade-up"href="experimental.html">vj_performances.zip</a>
-    </div>
-
-    <div class="imgtxt fade-up">
-      <div id="tooltip">
-        <span id="tooltipText">5/2025</span>
-        <img id="image" class="fade-up"src="img/image1.png">
-      </div>
-      <a id="txt"class="fade-up" href="game.html">nước_mộng.zip</a>
-    </div>
-
-    <div class="imgtxt fade-up">
-      <div id="tooltip">
-        <span id="tooltipText">2025</span>
-        <img id="image" class="fade-up"src="img/image1.png">
-      </div>
-      <a id="txt" class="fade-up"href="coding.html">generative_art.zip</a>
-    </div>
-
-    <div id="word" class="fade-up">
-      <div id="intro1" class="fade-up">
-        <i id="j1" class="fade-up">
-          <span id="gettoknow" class="fade-up"><i id="arrow">⤷</i>
-            projects by</span>
-        </i>
-        <div id="changetext1" class="fade-up">
-          <i id="blur">me:)</i>
+      <div class="imgtxt fade-up">
+        <div id="tooltip">
+          <span id="tooltipText">7/2023</span>
+          <img id="image" class="fade-up" src="img/image1.png">
         </div>
-        <img src="img/star.gif" id="smallabout1" class="fade-up">
+        <a id="txt" class="fade-up" href="mannequin.html">prj_mannequin.zip</a>
       </div>
-  </section>
+
+      <div class="imgtxt fade-up">
+        <div id="tooltip">
+          <span id="tooltipText">2022-2025</span>
+          <img id="image" class="fade-up" src="img/image1.png">
+        </div>
+        <a id="txt" class="fade-up" href="3dmodeling.html">3d_modeling.zip</a>
+      </div>
+
+      <div class="imgtxt fade-up">
+        <div id="tooltip">
+          <span id="tooltipText">2024</span>
+          <img id="image" class="fade-up" src="img/image1.png">
+        </div>
+        <a id="txt" class="fade-up" href="2dillustration.html">2d_illustration.zip</a>
+      </div>
+
+      <div class="imgtxt fade-up">
+        <div id="tooltip">
+          <span id="tooltipText">2025-2026</span>
+          <img id="image" class="fade-up" src="img/image1.png">
+        </div>
+        <a id="txt" class="fade-up" href="mapping.html">project_mapping.zip</a>
+      </div>
+
+      <div class="imgtxt fade-up">
+        <div id="tooltip">
+          <span id="tooltipText">12/2024</span>
+          <img id="image" class="fade-up" src="img/image1.png">
+        </div>
+        <a id="txt" class="fade-up" href="saodo.html">sao_đỏ.zip</a>
+      </div>
+
+      <div class="imgtxt fade-up">
+        <div id="tooltip">
+          <span id="tooltipText">2025-2026</span>
+          <img id="image" class="fade-up" src="img/image1.png">
+        </div>
+        <a id="txt" class="fade-up" href="experimental.html">vj_performances.zip</a>
+      </div>
+
+      <div class="imgtxt fade-up">
+        <div id="tooltip">
+          <span id="tooltipText">5/2025</span>
+          <img id="image" class="fade-up" src="img/image1.png">
+        </div>
+        <a id="txt" class="fade-up" href="game.html">nước_mộng.zip</a>
+      </div>
+
+      <div class="imgtxt fade-up">
+        <div id="tooltip">
+          <span id="tooltipText">2025-2026</span>
+          <img id="image" class="fade-up" src="img/image1.png">
+        </div>
+        <a id="txt" class="fade-up" href="coding.html">generative_art.zip</a>
+      </div>
+
+      <div id="word" class="fade-up">
+        <div id="intro1" class="fade-up">
+          <i id="j1" class="fade-up">
+            <span id="gettoknow" class="fade-up"><i id="arrow">⤷</i>
+              projects by</span>
+          </i>
+          <div id="changetext1" class="fade-up">
+            <i id="blur">me:)</i>
+          </div>
+          <img src="img/star.gif" id="smallabout1" class="fade-up">
+        </div>
+      </div>
+
+    </section>
+  </div>
 </div>
+
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
 <script>
-  const fadeUps = document.querySelectorAll('.fade-up');
+  // =========================
+  // FADE UP ANIMATION
+  // =========================
 
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach((entry, index) => {
-      if (entry.isIntersecting) {
-        anime({
-          targets: entry.target,
-          opacity: [0, 1],
-          translateY: [60, 0],
-          duration: 2000,
-          delay: index * 150, // tạo hiệu ứng delay so le
-          easing: 'easeOutExpo',
-            complete: function(anim) {
-    // Xoá inline transform để trả lại quyền cho CSS hover
-    anim.animatables.forEach(a => {
-      a.target.style.transform = '';
-    });}
-          
-        });
-        
-        observer.unobserve(entry.target); // Chỉ animate 1 lần
-      }
-    });
-  }, {
-    threshold: 0.3
+  const fadeUps = document.querySelectorAll(".panel");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          anime({
+            targets: entry.target,
+            opacity: [0, 1],
+            translateY: [60, 0],
+            duration: 1200,
+            delay: index * 100,
+            easing: "easeOutExpo",
+          });
+
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.3,
+    }
+  );
+
+  fadeUps.forEach((el) => {
+    el.style.opacity = "0";
+    observer.observe(el);
   });
+</script>
 
-  fadeUps.forEach(el => observer.observe(el));
+<script>
+  document.getElementById("blur").onclick = function () {
+    var changeText = document.getElementById("blur")
+
+    if (changeText.textContent == 'me:)') {
+      changeText.textContent = "minh";
+      changeText.style.color = "#ff20e1";
+    }
+    else if (changeText.textContent == 'minh') {
+      changeText.textContent = "them";
+      changeText.style.color = "#ff20e1";
+    }
+    else if (changeText.textContent == 'them') {
+      changeText.textContent = "her";
+      changeText.style.color = "#ff20e1";
+    }
+    else if (changeText.textContent == 'her') {
+      changeText.textContent = "me:)";
+      changeText.style.color = "black";
+    }
+
+  }
 </script>
 
 
-
-
-<script>
-  document.getElementById("blur").onclick = function() {
-  var changeText = document.getElementById("blur")
-  
-    if (changeText.textContent == 'me:)') {
-       changeText.textContent = "minh";
-       changeText.style.color = "#ff20e1";
-   }
-    else if (changeText.textContent =='minh') {
-       changeText.textContent = "them";
-       changeText.style.color = "#ff20e1";
-   }
-   else if (changeText.textContent =='them') {
-       changeText.textContent = "her";
-       changeText.style.color = "#ff20e1";
-   }
-   else if (changeText.textContent =='her') {
-       changeText.textContent = "me:)";
-       changeText.style.color = "black";
-   }
-  
-  }
-  </script>
-
-
 <footer>
-<div class="stock-ticker">
-  <ul aria-hidden="true">
-    <li>
-          <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
-          <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
-          <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
+  <div class="stock-ticker">
+    <ul aria-hidden="true">
+      <li>
+        <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
+        <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
+        <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
       </li>
       <li>
-          <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
-          <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
-          <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
+        <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
+        <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
+        <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
       </li>
       <li>
-          <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
-          <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
-          <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
+        <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
+        <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
+        <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
       </li>
-  </ul>
-  <ul aria-hidden="true">
-    <li>
-          <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
-          <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
-          <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
+    </ul>
+    <ul aria-hidden="true">
+      <li>
+        <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
+        <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
+        <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
       </li>
       <li>
-          <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
-          <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
-          <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
+        <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
+        <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
+        <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
       </li>
       <li>
-          <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
-          <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
-          <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
+        <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
+        <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
+        <span id="account">@nhetminh⋆✴︎˚｡⋆</span>
       </li>
-  </ul>
-</div>
+    </ul>
+  </div>
 </footer>
 
+</main>
 </body>
-
 </html>

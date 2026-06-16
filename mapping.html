@@ -8,27 +8,37 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <link rel="icon" type="image/x-icon" href="img/buttton-green.png">
-
 </head>
+
+
     <!--spin on scroll-->
     <div class="wrapper">
-        <div class="circle">
-      <img id="reload" src="img/hot-dog_1f32d.webp" alt="scroll">
-        </div>
-</div>
-      <div id="fact">-->please hire me<--</div>
-      <script>
-        document.getElementById("reload").onclick = function() {
-            var x = document.getElementById("fact")
-            if(x.style.opacity === "0") {
-            x.style.opacity = "100";
-          }
-          else {
-            x.style.opacity = "0";
-          }
-        }
-     </script>
-<script src="main.js"></script>
+      <div class="circle">
+        <img id="reload" src="img/hot-dog_1f32d.webp" alt="scroll">
+      </div>
+    </div>
+    
+    <div id="fact">-->please hire me<-- </div>
+    
+        <script>
+          const reload = document.getElementById("reload");
+          const fact = document.getElementById("fact");
+
+          reload.addEventListener("click", () => {
+            const isHidden = getComputedStyle(fact).opacity == "0";
+
+            anime({
+              targets: fact,
+              opacity: isHidden ? 1 : 0,
+              duration: 300,
+              easing: "easeInOutQuad"
+            });
+          });
+        </script>
+        <script src="main.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+
+        
 <main>
   <div class="scrollbg">
     <section>
@@ -51,55 +61,42 @@
     </section>
   </div>
   
-<script>
-window.onscroll = function () {
-    scrollRotate();
-};
-function scrollRotate() {
-    let image = document.getElementById("reload");
-    image.style.transform = "rotate(" + window.pageYOffset/2 + "deg)";
+  <script>
+    window.onscroll = function () {
+      scrollRotate();
+    };
+    function scrollRotate() {
+      let image = document.getElementById("reload");
+      image.style.transform = "rotate(" + window.pageYOffset / 2 + "deg)";
 
-  let section = document.getElementById("star4_home");
-  section.style.transform = "rotate(" + window.pageYOffset + "deg)";
+      let section = document.getElementById("star4_home");
+      section.style.transform = "rotate(" + window.pageYOffset + "deg)";
 
-  let section1 = document.getElementById("star5_home");
-  section1.style.transform = "rotate(" + window.pageYOffset + "deg)";
+      let section1 = document.getElementById("star5_home");
+      section1.style.transform = "rotate(" + window.pageYOffset + "deg)";
 
-  let section2 = document.getElementById("star6_home");
-  section2.style.transform = "rotate(" + window.pageYOffset + "deg)";
+      let section2 = document.getElementById("star6_home");
+      section2.style.transform = "rotate(" + window.pageYOffset + "deg)";
 
-  let section3 = document.getElementById("star7_home");
-  section3.style.transform = "rotate(" + window.pageYOffset + "deg)";
+      let section3 = document.getElementById("star7_home");
+      section3.style.transform = "rotate(" + window.pageYOffset + "deg)";
 
-  let section4 = document.getElementById("star8_home");
-  section4.style.transform = "rotate(" + window.pageYOffset + "deg)";
+      let section4 = document.getElementById("star8_home");
+      section4.style.transform = "rotate(" + window.pageYOffset + "deg)";
 
-  let section5 = document.getElementById("star9_home");
-  section5.style.transform = "rotate(" + window.pageYOffset + "deg)";
+      let section5 = document.getElementById("star9_home");
+      section5.style.transform = "rotate(" + window.pageYOffset + "deg)";
 
-  let section6 = document.getElementById("star10_home");
-  section6.style.filter = "hue-rotate(" + window.pageYOffset + "deg)";
-}
-</script>   
+      let section6 = document.getElementById("star10_home");
+      section6.style.filter = "hue-rotate(" + window.pageYOffset + "deg)";
+    }
+  </script>
+
+
     <header>
-        <div class="navbar">
-          <div class="logo"><a href="index.html"><img src="img/logo.webp" id="logomeo"></a></div>
-            <ul class="links">
-              <li id="dottextnav">
-                <div class="dotnav3"></div>
-            <a id="textnavbar" href="about.html">about</a>
-              </li>
-              <li id="dottextnav">
-                <div class="dotnav2"></div>
-                <a id="textnavbar" href="contact.html">contact</a>
-              </li>
-            </ul>
-            <div class="toggle_btn">
-                <i class="fa-solid fa-bars"></i>
-            </div>
-        </div>
-            
-        <div class="dropdown_menu">
+      <div class="navbar">
+        <div class="logo"><a href="index.html"><img src="img/logo.webp" id="logomeo"></a></div>
+        <ul class="links">
           <li id="dottextnav">
             <div class="dotnav3"></div>
             <a id="textnavbar" href="about.html">about</a>
@@ -108,273 +105,295 @@ function scrollRotate() {
             <div class="dotnav2"></div>
             <a id="textnavbar" href="contact.html">contact</a>
           </li>
+        </ul>
+        <div class="toggle_btn">
+          <i class="fa-solid fa-bars"></i>
         </div>
-        </header>
-        <script>
-          const toggleBtn = document.querySelector('.toggle_btn')
-          const toggleBtnIcon = document.querySelector('.toggle_btn i')
-          const dropDownMenu = document.querySelector('.dropdown_menu')
-        
-          toggleBtn.onclick = function () {
-            dropDownMenu.classList.toggle('open')
-            const isOpen = dropDownMenu.classList.contains('open')
-        
-          }
-        </script>
+      </div>
+    
+      <div class="dropdown_menu">
+        <li id="dottextnav">
+          <div class="dotnav3"></div>
+          <a id="textnavbar" href="about.html">about</a>
+        </li>
+        <li id="dottextnav">
+          <div class="dotnav2"></div>
+          <a id="textnavbar" href="contact.html">contact</a>
+        </li>
+      </div>
+    </header>
+
+
+    <script>
+      const toggleBtn = document.querySelector('.toggle_btn')
+      const toggleBtnIcon = document.querySelector('.toggle_btn i')
+      const dropDownMenu = document.querySelector('.dropdown_menu')
+
+      toggleBtn.onclick = function () {
+        dropDownMenu.classList.toggle('open')
+        const isOpen = dropDownMenu.classList.contains('open')
+
+      }
+    </script>
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
     <script>
-        $(window).scroll(function(){
-            var $window = $(window),
-            $colorcircle = $('.colorcircle'),
-            $panel = $('.panel');
-    
-            var scroll = $window.scrollTop() + ($window.height() / 3);
-            $panel.each(function (){
-                var $this = $(this);
-                if($this.position().top <= scroll &&
-            $this.position().top + $this.height() > scroll){
-                $colorcircle.removeClass(function (index,css){
-                    return (css.match (/(^|\s)color-\S+/g) || []).join('');
-                });
-                $colorcircle.addClass('color-' + $(this).data('color'));
-            }
+      $(window).scroll(function () {
+        var $window = $(window),
+          $colorcircle = $('.colorcircle'),
+          $panel = $('.panel');
+
+        var scroll = $window.scrollTop() + ($window.height() / 3);
+        $panel.each(function () {
+          var $this = $(this);
+          if ($this.position().top <= scroll &&
+            $this.position().top + $this.height() > scroll) {
+            $colorcircle.removeClass(function (index, css) {
+              return (css.match(/(^|\s)color-\S+/g) || []).join('');
             });
-        }).scroll();
+            $colorcircle.addClass('color-' + $(this).data('color'));
+          }
+        });
+      }).scroll();
     </script>
     
-    <div class="colorcircle"></div>
+    <div class="colorcircle_mannequin"></div>
 
-    <div class="colorcircle"></div>
 
 <!--viewmore-->
     <div>
-        <i id="j">
-            <span id="gettoknow_prj" class="viewmore">
-
-            <a id="view" href="archive.html">view more<i id="arrow">↗</i></a>
+      <i id="j">
+        <span id="gettoknow_prj" class="viewmore">
+          <a id="view" href="archive.html">view more<i id="arrow">↗</i></a>
         </span>
-          </i> 
+      </i>
     </div>
+
+
 <!--GALLERY-->
 <div class="description">
 
   <div class="abstract fade-up">
-    <h3 class="fade-up"><i id="arrow">↘</i> From August 2025, I had the opportunity to collaborate with Tung Monkey and his team, representing Vietnam at iMapp Bucharest in Romania — the world’s largest projection mapping event. Our concept centered on Vietnamese culture, and my scenes focused on Tò He (traditional toy figurines) and Hát Bội masks. For Tò He, I incorporated the figure of Saint Gióng to add symbolic depth and meaning. For Hát Bội, I conducted research on the headpieces and mask patterns to ensure cultural accuracy. In addition, my Saint Gióng scene also integrated 2D motion graphics to enrich the storytelling. 
-    <br>🎫🎱🪗🏳️‍🌈🎤</h3>
-    <h4 class="fade-up">Credits</h4>
-
-    <h5 class="fade-up"> 
- Art Director: Tung Monkey
-  <br>Visual Director: Jay Tran
-  <br>Curated by: 084visual
-  <br>Music by: Lorence V
-
-</h5>
+    <h3 id="h3_mannequin" class="fade-up"><i id="arrow">↘</i> From August 2025, I had the opportunity to collaborate with Tung Monkey and his team, representing Vietnam at iMapp
+    Bucharest in Romania, the world's largest projection mapping event, through the artwork <span class="club-name">'Chợ – When Art Is Life'</span>. Our
+    concept centered on Vietnamese culture, and the scenes I worked on focused on Tò He and Hát
+    Bội masks.
+    <br>
+    <br>
+    Later, my teammate Ton Ng and I participated in several projection mapping projects. Our artwork <span class="club-name">'ZEN'</span> explored the
+    concept of inner breathing—where human breath and the rhythm of nature merge into a shared soul. The project
+    was showcased at SCG Home Experience as part of Bangkok Design Week 2026.
+    <br>
+    <br>
+    Following that, our artwork <span class="club-name">'N[e]ostalgia Tableau'</span> was selected for OFFF Barcelona 2026 and screened at Disseny Hub in 
+    Spain. The work presents a retro-futuristic domestic tableau in which familiar household objects are
+    reimagined within an imagined future.
+    </h3>
+    <!--h4 class="fade-up">Credits</h4>
+    <h5 class="fade-up">
+      Art Director: Tung Monkey
+      <br>Visual Director: Jay Tran
+      <br>Curated by: 084visual
+      <br>Music by: Lorence V
+    </h5-->
   </div>
 </div>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-<script>
-  const fadeUps = document.querySelectorAll('.fade-up');
-
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach((entry, index) => {
-      if (entry.isIntersecting) {
-        anime({
-          targets: entry.target,
-          opacity: [0, 1],
-          translateY: [60, 0],
-          duration: 2000,
-          delay: index * 200, // tạo hiệu ứng delay so le
-          easing: 'easeOutExpo',
-          
-        });
-        
-        observer.unobserve(entry.target); // Chỉ animate 1 lần
-      }
-    });
-  }, {
-    threshold: 0.3
-  });
-  fadeUps.forEach(el => observer.observe(el));
-</script>
 
 
 
 <div class="containersushiplash">
 
-<div class="panel" data-color="white">
-  <div class="item">
-    <div class="item-img">
-       <img src="img/imapp.webp" alt=""/>
-    </div>   
-    <h4 id="button_name">Upcoming Event</h4>
-  </div>
-</div>
-
-<div class="panel" data-color="violet">
-  <div class="item">
-    <div class="item-img">
-       <img src="img/B1_FIXEDCOLOR.webp" alt=""/>
-    </div>   
-    <h4 id="button_name">Thanh Giong Draft</h4>
-  </div>
-</div>
-
-<div class="panel" data-color="white">
-  <div class="item">
-    <div class="item-img">
-       <img  src="img/B2 (1).webp" alt=""/>
-    </div>
-    <h4 id="button_name">Hat Boi Draft</h4>   
-  </div>
-</div>
-<!--div class="panel" data-color="violet">
-  <div class="item">
-      <div class="item-img">
-         <img  src="img/14 LOTO.webp"  alt=""/>
-      </div>   
-    </div>
-  </div>
-  <div class="panel" data-color="white">
-    <div class="item">
-      <div class="item-img">
-         <img  src="img/15 LOTO.webp" alt=""/>
-      </div>   
-    </div>
-  </div>
   <div class="panel" data-color="violet">
     <div class="item">
-        <div class="item-img">
-           <img  src="img/16 LOTO.webp" alt=""/>
-        </div>   
+      <div class="item-img">
+        <img src="img/imapp.webp" alt="" />
       </div>
-    </div-->
+      <h4 id="button_name">iMapp Bucharest 2025, Romania</h4>
+    </div>
+  </div>
 
-    <div class="panel" data-color="violet">
+  <div class="panel" data-color="violet">
     <div class="item">
       <div class="item-img">
-        <iframe width="922" height="240" src="https://www.youtube.com/embed/dlxDZ5MoUsM" title="HAT BOI - IMAPP BUCHAREST 2025" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <img src="img/MATNATUONG2.png" alt="" />
       </div>
-    <h4 id="button_name">Hat Boi Final<h4>
-    </div>  
+      
+    </div>
+  </div>
+
+  <div class="panel" data-color="violet">
+    <div class="item">
+      <div class="item-img">
+        <video class="video-background" autoplay loop muted playsinline>
+          <source src="img/B2 (1).mp4" type="video/mp4" />
+        </video>
+      </div>
+      <h4 id="button_name">Hat Boi Scene<h4>
+    </div>
   </div>
 
   <div class="panel" data-color="white">
     <div class="item">
       <div class="item-img">
-<iframe width="922" height="240" src="https://www.youtube.com/embed/BHRbV-0JiqY" title="THANH GIONG - IMAPP BUCHAREST 2025" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>      </div>
-    <h4 id="button_name">Thanh Giong Final<h4>
-    </div>  
- </div>
-
-    <div class="panel" data-color="violet">
-    <div class="item">
-      <div class="item-img">
-       <iframe width="862" height="485" src="https://www.youtube.com/embed/D3gA51gohTo" title="The Visual 084 | iMapp Bucharest 2025&#39;s Winner League" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>  </div>
-       <h4 id="button_name">Full Performance<h4>
-
-      </div>  
+        <video class="video-background" autoplay loop muted playsinline>
+          <source src="img/B1 (2).mp4" type="video/mp4" />
+        </video>
+      </div>
+      <h4 id="button_name">Thanh Giong Scene<h4>
     </div>
-
-    <div class="panel" data-color="white">
-    <div class="item">
-      <div class="item-img">
-       <iframe width="990" height="557" src="https://www.youtube.com/embed/6LrvawTuRTY" title="BANGKOK DESIGN WEEK 2026 | SCG Projection Mapping" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>  </div>
-       <h4 id="button_name">SCG Projection Mapping in Bangkok, Thailand<h4>
-
-      </div>  
-    </div>  
-
-     <div class="panel" data-color="violet">
-    <div class="item">
-      <div class="item-img">
-       <iframe width="1051" height="356" src="https://www.youtube.com/embed/fJC0pp9CvKo" title="OFFFEST 2026 | SUBMISSION" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> </div>
-       <h4 id="button_name">Submission for OFFFEST 2026 in Barcelona, Spain<h4>
-
-      </div>  
-    </div>
- </div>
-
- <div class="panel" data-color="violet">
-          <div class="item">
-            <div class="item-img">
-              <video class="video-background" autoplay loop muted playsinline>
-        <source src="img/socialpost32.mp4" type="video/mp4" />
-      </video>
-            </div>
-            
-          </div>
-        </div>
-
-    <div class="panel" data-color="violet">
-    <div class="item">
-      <div class="item-img">
-        <iframe width="990" height="557" src="https://www.youtube.com/embed/Nhozpp4hmiY" title="N[e]ostalgia Tableau | OFFF Barcelona 2026 Festival" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> </div>
-       <h4 id="button_name">Submission for OFFFEST 2026 in Barcelona, Spain<h4>
-
-      </div> 
   </div>
-   </div> </div>
 
+  <div class="panel" data-color="violet">
+    <div class="item">
+      <div class="item-img">
+        <iframe width="862" height="485" src="https://www.youtube.com/embed/D3gA51gohTo"
+          title="The Visual 084 | iMapp Bucharest 2025&#39;s Winner League" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <h4 id="button_name">Full Performance<h4>
+    </div>
+  </div>
+
+  <div class="panel" data-color="violet">
+    <div class="item">
+      <div class="item-img">
+        <video class="video-background" autoplay loop muted playsinline>
+          <source src="img/NHAMINH+TONNG_ZEN222.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <h4 id="button_name">ZEN</h4>
+    </div>
+  </div>
+
+  <div class="panel" data-color="white">
+    <div class="item">
+      <div class="item-img">
+        <iframe width="990" height="557" src="https://www.youtube.com/embed/6LrvawTuRTY"
+          title="BANGKOK DESIGN WEEK 2026 | SCG Projection Mapping" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <h4 id="button_name">Bangkok Design Week 2026, Thailand<h4>
+    </div>
+  </div>
+  
+  <div class="panel" data-color="violet">
+    <div class="item">
+      <div class="item-img">
+        <video class="video-background" autoplay loop muted playsinline>
+          <source src="img/socialpost2_1.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <h4 id="button_name">N[e]ostalgia Tableau</h4>
+    </div>
+  </div>
+  
+  
+  <div class="panel" data-color="violet">
+    <div class="item">
+      <div class="item-img">
+        <video class="video-background" autoplay loop muted playsinline>
+          <source src="img/socialpost32.mp4" type="video/mp4" />
+        </video>
+      </div>
+    </div>
+  </div>
+  
+  <div class="panel" data-color="violet">
+    <div class="item">
+      <div class="item-img">
+        <iframe width="990" height="557" src="https://www.youtube.com/embed/Nhozpp4hmiY"
+          title="N[e]ostalgia Tableau | OFFF Barcelona 2026 Festival" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <h4 id="button_name">OFFF Barcelona 2026, Spain<h4>
+  
+    </div>
+  </div>
+
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/intersection-observer@0.12.2/intersection-observer.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
 <script>
-    const items = Array.from(document.querySelectorAll(".item"));
+  // =========================
+  // FADE UP ANIMATION
+  // =========================
 
+  const fadeUps = document.querySelectorAll(".panel");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          anime({
+            targets: entry.target,
+            opacity: [0, 1],
+            translateY: [60, 0],
+            duration: 1200,
+            delay: index * 100,
+            easing: "easeOutExpo",
+          });
+
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.3,
+    }
+  );
+
+  fadeUps.forEach((el) => {
+    el.style.opacity = "0";
+    observer.observe(el);
+  });
+
+  // =========================
+  // SCALE EFFECT
+  // =========================
+
+  const items = document.querySelectorAll(".item");
+
+  function setScale() {
     items.forEach((item) => {
-        const img = item.querySelector(".item-img");
-        gsap.set(img, {scale:0});
+      const img = item.querySelector(".item-img");
+
+      if (!img) return;
+
+      const rect = item.getBoundingClientRect();
+
+      const viewportCenter = window.innerHeight / 2;
+      const itemCenter = rect.top + rect.height / 2;
+
+      const distance = Math.abs(viewportCenter - itemCenter);
+
+      const progress = distance / viewportCenter;
+
+      const adjustedProgress = Math.pow(progress, 2);
+
+      let scale = 1 - adjustedProgress * 0.5;
+
+      scale = Math.max(0.5, Math.min(scale, 1));
+
+      gsap.set(img, {
+        scale: scale,
+      });
     });
+  }
 
-    function setScale(){
-        items.forEach((item) => {
-            const img = item.querySelector(".item-img");
-            const rect = item.getBoundingClientRect();
+  // chạy lần đầu
+  setScale();
 
-            const viewportHeight = window.innerHeight;
-            const itemCenter = rect.top + rect.height / 2;
+  // cập nhật khi scroll
+  window.addEventListener("scroll", setScale);
 
-            const distanceFromCenter = Math.abs(viewportHeight / 2 - itemCenter);
-
-            const progress = distanceFromCenter / (viewportHeight / 2);
-
-            const adjustedProgress = Math.pow(progress, 2);
-
-            let scale = 1 - adjustedProgress * 0.5;
-            scale = Math.max(0, Math.min(scale,1));
-
-            gsap.to(img, {scale: scale, duration:0.1});
-        });
-    }
-
-    setScale();
-
-    window.addEventListener("scroll", setScale);
-    let scroll = 0;
-    let oldScrollY = 0;
-    let roundedScrollY = 0;
-    const lerpAmount = 0.1;
-
-    function lerp(start, end, t){
-        return start * (1 - t) + end * i;
-    }
-
-    function animate(){
-        requestAnimationFrame(animate);
-
-        roundedScrollY = lerp(roundedScrollY, scrollY, lerpAmount);
-
-        document.querySelector(".container").style.transform = 'translate3d(0, ${-roundedScrollY}px, 0)';
-
-        setScale();
-    }
-
-    window.addEventListener("scroll", (e) => {
-        scrollY = window.scrollY;
-    });
-
-    animate();
+  // cập nhật khi resize
+  window.addEventListener("resize", setScale);
 </script>
 
 </main>

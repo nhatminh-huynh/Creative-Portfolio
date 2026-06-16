@@ -8,27 +8,37 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <link rel="icon" type="image/x-icon" href="img/buttton-green.png">
-
 </head>
+
+
     <!--spin on scroll-->
     <div class="wrapper">
-        <div class="circle">
-      <img id="reload" src="img/hot-dog_1f32d.webp" alt="scroll">
-        </div>
-</div>
-      <div id="fact">-->please hire me<--</div>
-      <script>
-        document.getElementById("reload").onclick = function() {
-            var x = document.getElementById("fact")
-            if(x.style.opacity === "0") {
-            x.style.opacity = "100";
-          }
-          else {
-            x.style.opacity = "0";
-          }
-        }
-     </script>
-<script src="main.js"></script>
+      <div class="circle">
+        <img id="reload" src="img/hot-dog_1f32d.webp" alt="scroll">
+      </div>
+    </div>
+    
+    <div id="fact">-->please hire me<-- </div>
+    
+        <script>
+          const reload = document.getElementById("reload");
+          const fact = document.getElementById("fact");
+
+          reload.addEventListener("click", () => {
+            const isHidden = getComputedStyle(fact).opacity == "0";
+
+            anime({
+              targets: fact,
+              opacity: isHidden ? 1 : 0,
+              duration: 300,
+              easing: "easeInOutQuad"
+            });
+          });
+        </script>
+        <script src="main.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+
+        
 <main>
     <div class="scrollbg">
     <section>
@@ -52,56 +62,41 @@
   </div>
       
     <script>
-    window.onscroll = function () {
+      window.onscroll = function () {
         scrollRotate();
-    };
-    function scrollRotate() {
+      };
+      function scrollRotate() {
         let image = document.getElementById("reload");
-        image.style.transform = "rotate(" + window.pageYOffset/2 + "deg)";
-    
-      let section = document.getElementById("star4_home");
-      section.style.transform = "rotate(" + window.pageYOffset + "deg)";
-    
-      let section1 = document.getElementById("star5_home");
-      section1.style.transform = "rotate(" + window.pageYOffset + "deg)";
-    
-      let section2 = document.getElementById("star6_home");
-      section2.style.transform = "rotate(" + window.pageYOffset + "deg)";
-    
-      let section3 = document.getElementById("star7_home");
-      section3.style.transform = "rotate(" + window.pageYOffset + "deg)";
-    
-      let section4 = document.getElementById("star8_home");
-      section4.style.transform = "rotate(" + window.pageYOffset + "deg)";
-    
-      let section5 = document.getElementById("star9_home");
-      section5.style.transform = "rotate(" + window.pageYOffset + "deg)";
-    
-      let section6 = document.getElementById("star10_home");
-      section6.style.filter = "hue-rotate(" + window.pageYOffset + "deg)";
-    }
+        image.style.transform = "rotate(" + window.pageYOffset / 2 + "deg)";
+
+        let section = document.getElementById("star4_home");
+        section.style.transform = "rotate(" + window.pageYOffset + "deg)";
+
+        let section1 = document.getElementById("star5_home");
+        section1.style.transform = "rotate(" + window.pageYOffset + "deg)";
+
+        let section2 = document.getElementById("star6_home");
+        section2.style.transform = "rotate(" + window.pageYOffset + "deg)";
+
+        let section3 = document.getElementById("star7_home");
+        section3.style.transform = "rotate(" + window.pageYOffset + "deg)";
+
+        let section4 = document.getElementById("star8_home");
+        section4.style.transform = "rotate(" + window.pageYOffset + "deg)";
+
+        let section5 = document.getElementById("star9_home");
+        section5.style.transform = "rotate(" + window.pageYOffset + "deg)";
+
+        let section6 = document.getElementById("star10_home");
+        section6.style.filter = "hue-rotate(" + window.pageYOffset + "deg)";
+      }
     </script>
 
 
     <header>
-        <div class="navbar">
-          <div class="logo"><a href="index.html"><img src="img/logo.webp" id="logomeo"></a></div>
-            <ul class="links">
-              <li id="dottextnav">
-                <div class="dotnav3"></div>
-            <a id="textnavbar" href="about.html">about</a>
-              </li>
-              <li id="dottextnav">
-                <div class="dotnav2"></div>
-                <a id="textnavbar" href="contact.html">contact</a>
-              </li>
-            </ul>
-            <div class="toggle_btn">
-                <i class="fa-solid fa-bars"></i>
-            </div>
-        </div>
-            
-        <div class="dropdown_menu">
+      <div class="navbar">
+        <div class="logo"><a href="index.html"><img src="img/logo.webp" id="logomeo"></a></div>
+        <ul class="links">
           <li id="dottextnav">
             <div class="dotnav3"></div>
             <a id="textnavbar" href="about.html">about</a>
@@ -110,481 +105,487 @@
             <div class="dotnav2"></div>
             <a id="textnavbar" href="contact.html">contact</a>
           </li>
+        </ul>
+        <div class="toggle_btn">
+          <i class="fa-solid fa-bars"></i>
         </div>
-        </header>
-        <script>
-            const toggleBtn = document.querySelector('.toggle_btn')
-            const toggleBtnIcon = document.querySelector('.toggle_btn i')
-            const dropDownMenu = document.querySelector('.dropdown_menu')
-          
-            toggleBtn.onclick = function () {
-              dropDownMenu.classList.toggle('open')
-              const isOpen = dropDownMenu.classList.contains('open')
-          
-            }
-          </script>
+      </div>
+    
+      <div class="dropdown_menu">
+        <li id="dottextnav">
+          <div class="dotnav3"></div>
+          <a id="textnavbar" href="about.html">about</a>
+        </li>
+        <li id="dottextnav">
+          <div class="dotnav2"></div>
+          <a id="textnavbar" href="contact.html">contact</a>
+        </li>
+      </div>
+    </header>
 
+
+    <script>
+      const toggleBtn = document.querySelector('.toggle_btn')
+      const toggleBtnIcon = document.querySelector('.toggle_btn i')
+      const dropDownMenu = document.querySelector('.dropdown_menu')
+
+      toggleBtn.onclick = function () {
+        dropDownMenu.classList.toggle('open')
+        const isOpen = dropDownMenu.classList.contains('open')
+
+      }
+    </script>
+    
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
     <script>
-        $(window).scroll(function(){
-            var $window = $(window),
-            $colorcircle = $('.colorcircle'),
-            $panel = $('.panel');
-    
-            var scroll = $window.scrollTop() + ($window.height() / 3);
-            $panel.each(function (){
-                var $this = $(this);
-                if($this.position().top <= scroll &&
-            $this.position().top + $this.height() > scroll){
-                $colorcircle.removeClass(function (index,css){
-                    return (css.match (/(^|\s)color-\S+/g) || []).join('');
-                });
-                $colorcircle.addClass('color-' + $(this).data('color'));
-            }
+      $(window).scroll(function () {
+        var $window = $(window),
+          $colorcircle = $('.colorcircle'),
+          $panel = $('.panel');
+
+        var scroll = $window.scrollTop() + ($window.height() / 3);
+        $panel.each(function () {
+          var $this = $(this);
+          if ($this.position().top <= scroll &&
+            $this.position().top + $this.height() > scroll) {
+            $colorcircle.removeClass(function (index, css) {
+              return (css.match(/(^|\s)color-\S+/g) || []).join('');
             });
-        }).scroll();
+            $colorcircle.addClass('color-' + $(this).data('color'));
+          }
+        });
+      }).scroll();
     </script>
     
     <div class="colorcircle_mannequin"></div>
 
+
 <!--viewmore-->
     <div>
-        <i id="j">
-            <span id="gettoknow_prj" class="viewmore">
-
-            <a id="view" href="archive.html">view more<i id="arrow">↗</i></a>
+      <i id="j">
+        <span id="gettoknow_prj" class="viewmore">
+    
+          <a id="view" href="archive.html">view more<i id="arrow">↗</i></a>
         </span>
-          </i> 
+      </i>
     </div>
+
+
 <!--GALLERY-->
 <div class="description">
 
   <div class="abstract fade-up">
-    <h3 id="h3_mannequin" class="fade-up"><i id="arrow">↘</i> This was one of the most incredible experiences I’ve ever had. I learned how to combine music, beats, and visuals in a cohesive way. We used Resolume for VJing, while the visuals were created using Blender, After Effects, and Photoshop.
-
-The concept poses a satirical question: What would be left of the world if mothers stopped warning their kids about dirty street food, if all 100 million people in Vietnam owned a red or blue plastic chair, and if limbs were boxed up and sold at a discount because no one needed them anymore? You're invited to count down the days… to the end of the world.
-    <br>💥🥫🛒💼🌊</h3>
-
-<h4 class="fade-up">Credits</h4>
-<h5 class="fade-up"> 
-  Scene Direction: Ton Ng, Khanh An, Nhat Minh
-  <br>3D Modeling: Ton Ng, Khanh An, Nhat Minh
-  <br>3D Animation: Ton Ng, Khanh An, Nhat Minh, Tri Nhan
-  <br>Character Design: Nhat Minh
-  <br>Graphics Assets: Nhat Minh
-  <br>After Effects Assets: Ton Ng, Khanh An
-
-  <br>Storyboard: Ton Ng, Khanh An, Nhat Minh
-  <br>Research Document: Ton Ng, Khanh An, Nhat Minh
-  <br>Music Mixer: Khanh An
-  <br>Resolume Programming: Khanh An
-
-  <br>Live Performance: Ton Ng, Khanh An, Nhat Minh
-</h5>
-
-  </div>
-</div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-<script>
-  const fadeUps = document.querySelectorAll('.fade-up');
-
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach((entry, index) => {
-      if (entry.isIntersecting) {
-        anime({
-          targets: entry.target,
-          opacity: [0, 1],
-          translateY: [60, 0],
-          duration: 2000,
-          delay: index * 200, // tạo hiệu ứng delay so le
-          easing: 'easeOutExpo',
-          
-        });
-        
-        observer.unobserve(entry.target); // Chỉ animate 1 lần
-      }
-    });
-  }, {
-    threshold: 0.3
-  });
-  fadeUps.forEach(el => observer.observe(el));
-</script>
+    <h3 id="h3_mannequin" class="fade-up"><i id="arrow">↘</i> <span class="club-name">'CLGT: Còn Lại Gì Thế'</span> was the first experimental VJ performance I worked on, alongside my teammates Ton Ng and Khanh
+    An. The project poses a satirical question: What would be left of the world if mothers stopped warning their children
+    about dirty street food, if all 100 million people in Vietnam owned a plastic chair, and if limbs were boxed
+    up and sold at a discount because no one needed them anymore? The audience is invited to count down the days… to the end
+    of the world.
+    <br>
+    <br>
+    Following this project, I had more opportunities to work in the VJ field, including participating in 29th Floor Radio’s
+    <span class="club-name">'Xập Xình'</span> event and becoming a contestant at VJ Mazed 2025, curated by City Tết Fest, where I reached the semi-finals.
+    <br>
+    <br>
+    Most recently, Ton Ng and I completed a major VJ performance at RMIT called <span class="club-name">'Ysland'</span>. The work explored the concept of Yin and Yang on an imagined island,
+    culminating in a visual narrative where humans and architecture gradually collapse into one another.
+    </h3>
 
 
-<div class="panel" data-color="white">
-
-  <div class="item">
-    <div class="item-img">
-      <iframe width="853" height="480" src="https://www.youtube.com/embed/WWmgV3IlAKk"
-        title="CLGT: CON LAI GI THE? | Live VJ Performance | 2025" frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </div>
-    <h4 id="button_name">Live performance @ RMIT University Vietnam<h4>
-  </div>
-</div>
-
-<div class="panel" data-color="white">
-  <div class="item">
-    <div class="item-img">
-      <iframe width="853" height="480" src="https://www.youtube.com/embed/Z_WGAgqYybQ"
-        title="CLGT: CON LAI GI THE? | DMS3 | ARCAN | 2025" frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </div>
-    <h4 id="button_name">Live performance @ Arcan Saigon<h4>
-  </div>
-</div>
-<div class="panel" data-color="white">
-  <div class="item">
-    <div class="item-img">
-      <iframe title="Full Recording" src="https://player.vimeo.com/video/1076862076?h=f10acc3093" width="853"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-
-        height="480" frameborder="0" allowfullscreen></iframe>
-    </div>
-    <h4 id="button_name">Full Recording<h4>
-  </div>
-</div>
-</div>
-
-
-<div class="panel" data-color="violet">
-  <div class="item">
-    <div class="item-img">
-      <img src="img/image-177.webp" alt="" />
-    </div>
-    <h4 id="button_name">Event photo taken @ RMIT<h4>
-  </div>
-</div>
-
-<div class="panel" data-color="violet">
-  <div class="item">
-    <div class="item-img">
-      <video class="video-background" autoplay loop muted playsinline>
-        <source src="img/IMG_2246.mp4" type="video/mp4" />
-      </video>
-    </div>
-    <h4 id="button_name">TouchDesigner Testing<h4>
-  </div>
-</div>
-
-<div class="panel" data-color="violet">
-  <div class="item">
-    <div class="item-img">
-      <video class="video-background" autoplay loop muted playsinline>
-        <source src="img/IMG_2233.mp4" type="video/mp4" />
-      </video>
-    </div>
-    <h4 id="button_name">Effects Testing<h4>
-  </div>
-</div>
-
-<div class="panel" data-color="violet">
-  <div class="item">
-    <div class="item-img">
-      <img src="img/trời long.png" alt="" />
-    </div>
-  </div>
-</div>
-
-<div class="panel" data-color="violet">
-  <div class="item">
-    <div class="item-img">
-      <img src="img/0053.webp" alt="" />
-    </div>
-  </div>
-</div>
-
-<div class="panel" data-color="violet">
-  <div class="item">
-    <div class="item-img">
-      <img src="img/viahe_test.webp" alt="" />
-    </div>
   </div>
 </div>
 
 
-<div class="panel" data-color="violet">
-  <div class="item">
-    <div class="item-img">
-      <img src="img/testhead2.webp" alt="" />
-    </div>
-  </div>
+<!--div id="project-date">
+  When & Where
 </div>
-
-<div class="panel" data-color="violet">
-  <div class="item">
-    <div class="item-img">
-      <video class="video-background" autoplay loop muted playsinline>
-        <source src="img/botdien_twist.mp4" type="video/mp4" />
-      </video>
-    </div>
-  </div>
-</div>
-
-<!--div class="panel" data-color="violet">
-  <div class="item">
-    <div class="item-img" id="slider-container">
-      
-      <div class="slider">
-        <img src="img/Nhan the An lanh Ton nghiem Minh man_A4Research Document-02.png" loading="lazy" alt="" />
-        <img src="img/Nhan the An lanh Ton nghiem Minh man_A4Research Document-03.png" loading="lazy" alt="" />
-        <img src="img/Nhan the An lanh Ton nghiem Minh man_A4Research Document-08.png" loading="lazy" alt="" />
-        <img src="img/Nhan the An lanh Ton nghiem Minh man_A4Research Document-09.png" loading="lazy" alt="" />
-      </div>
-
-    </div>
-      <!--button class="prev">&#10094;</button>
-      <button class="next">&#10095;</button-->
-    <!--h4 id="button_name">Concept<h4>
-
-  </div>
-</div>
-
-<!--div class="panel" data-color="violet">
-  <div class="item">
-    <div class="item-img" id="slider-container">
-      
-      <div class="slider">
-        <img src="img/Nhan the An lanh Ton nghiem Minh man_A4Research Document-10.png" loading="lazy" alt="" />
-        <img src="img/Nhan the An lanh Ton nghiem Minh man_A4Research Document-11.png" loading="lazy" alt="" />
-        <img src="img/Nhan the An lanh Ton nghiem Minh man_A4Research Document-12.png" loading="lazy" alt="" />
-        <img src="img/Nhan the An lanh Ton nghiem Minh man_A4Research Document-13.png" loading="lazy" alt="" />
-        <img src="img/Nhan the An lanh Ton nghiem Minh man_A4Research Document-14.png" loading="lazy" alt="" />
-        <img src="img/Nhan the An lanh Ton nghiem Minh man_A4Research Document-15.png" loading="lazy" alt="" />
-        <img src="img/Nhan the An lanh Ton nghiem Minh man_A4Research Document-16.png" loading="lazy" alt="" />
-        <img src="img/Nhan the An lanh Ton nghiem Minh man_A4Research Document-17.png" loading="lazy" alt="" />
-        <img src="img/Nhan the An lanh Ton nghiem Minh man_A4Research Document-18.png" loading="lazy" alt="" />
-        <img src="img/Nhan the An lanh Ton nghiem Minh man_A4Research Document-19.png" loading="lazy" alt="" />
-        <img src="img/Nhan the An lanh Ton nghiem Minh man_A4Research Document-20.png" loading="lazy" alt="" />
-      </div>
-
-    </div>
-      <!--button class="prev">&#10094;</button>
-      <button class="next">&#10095;</button-->
-    <!--h4 id="button_name">Storyboard<h4>
-  </div>
-</div>
-
-<div class="panel" data-color="violet">
-  <div class="item">
-    <div class="item-img" id="slider-container">
-      
-      <div class="slider">
-        <img src="img/Nhan the An lanh Ton nghiem Minh man_A4Research Document-21.png" loading="lazy" alt="" />
-        <img src="img/Nhan the An lanh Ton nghiem Minh man_A4Research Document-22.png" loading="lazy" alt="" />
-        <img src="img/Nhan the An lanh Ton nghiem Minh man_A4Research Document-23.png" loading="lazy" alt="" />
-        <img src="img/Nhan the An lanh Ton nghiem Minh man_A4Research Document-24.png" loading="lazy" alt="" />
-        <img src="img/Nhan the An lanh Ton nghiem Minh man_A4Research Document-25.png" loading="lazy" alt="" />
-        <img src="img/Nhan the An lanh Ton nghiem Minh man_A4Research Document-26.png" loading="lazy" alt="" />
-        <img src="img/Nhan the An lanh Ton nghiem Minh man_A4Research Document-27.png" loading="lazy" alt="" />
-        <img src="img/Nhan the An lanh Ton nghiem Minh man_A4Research Document-28.png" loading="lazy" alt="" />
-        <img src="img/Nhan the An lanh Ton nghiem Minh man_A4Research Document-29.png" loading="lazy" alt="" />
-
-      </div>
-
-    </div>
-      <!--button class="prev">&#10094;</button>
-      <button class="next">&#10095;</button-->
-    <!--h4 id="button_name">Blender Process<h4>
-  </div>
-</div>
-
-
-<div class="panel" data-color="violet">
-  <div class="item">
-    <div class="item-img" id="slider-container">
-      
-      <div class="slider">
-        <img src="img/Nhan the An lanh Ton nghiem Minh man_A4Research Document-36.png" loading="lazy" alt="" />
-        <img src="img/Nhan the An lanh Ton nghiem Minh man_A4Research Document-37.png" loading="lazy" alt="" />
-      
-      </div>
-
-    </div>
-      <!--button class="prev">&#10094;</button>
-      <button class="next">&#10095;</button-->
-    <!--h4 id="button_name">Resolume Process<h4>
-
-  </div>
+<div id="project-description">
+  When & Where
 </div-->
 
- <div class="panel" data-color="violet">
-          <div class="item">
-            <div class="item-img">
-              <video class="video-background" autoplay loop muted playsinline>
-        <source src="img/29th floor 1.mp4" type="video/mp4" />   </video>
-            </div>
-            <h4 id="button_name">VJ for 29thfloor<h4>
-          </div>
-        </div>
 
-        <div class="panel" data-color="violet">
-          <div class="item">
-            <div class="item-img">
-              <video class="video-background" autoplay loop muted playsinline>
-        <source src="img/29th floor 2.mp4" type="video/mp4" /> </video>
-            </div>
-            <h4 id="button_name">VJ for 29thfloor<h4>
-          </div>
-        </div>
+<div class="containersushiplash">
 
-        <div class="panel" data-color="violet">
-          <div class="item">
-            <div class="item-img">
-              <video class="video-background" autoplay loop muted playsinline>
-        <source src="img/29th floor 3.mp4" type="video/mp4" />
-      </video>
-            </div>
-            <h4 id="button_name">VJ for 29thfloor<h4>
-          </div>
-        </div>
+  <div class="panel" data-color="white"
+  data-description=" The concept poses a satirical question: What would be left of the world if mothers stopped warning their kids
+      about dirty street food, if all 100 million people in Vietnam owned a red or blue plastic chair, and if limbs were
+      boxed up and sold at a discount because no one needed them anymore? You're invited to count down the days… to the
+      end of the world."
+  >
 
-
-        <div class="panel" data-color="violet">
-          <div class="item">
-            <div class="item-img">
-              <video class="video-background" autoplay loop muted playsinline>
-        <source src="img/Comp 4.mp4" type="video/mp4" />
-      </video>
-            </div>
-            <h4 id="button_name">VJ Maze 2025<h4>
-          </div>
-        </div>
-
-        <div class="panel" data-color="violet">
-          <div class="item">
-            <div class="item-img">
-              <video class="video-background" autoplay loop muted playsinline>
-        <source src="img/Comp 1.mp4" type="video/mp4" />
-      </video>
-            </div>
-            <h4 id="button_name">VJ Maze 2025<h4>
-          </div>
-        </div>
-
-        <div class="panel" data-color="violet">
-          <div class="item">
-            <div class="item-img">
-              <video class="video-background" autoplay loop muted playsinline>
-        <source src="img/Comp 2.mp4" type="video/mp4" />
-      </video>
-            </div>
-            <h4 id="button_name">VJ Maze 2025<h4>
-          </div>
-        </div>
-
-        <div class="panel" data-color="white">
-
-  <div class="item">
-    <div class="item-img">
-      <iframe width="990" height="557" src="https://www.youtube.com/embed/crMSs9QXgjI" title="YSLAND FULL PERFORMANCE @ RMIT University" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <div class="item">
+      <div class="item-img">
+        <iframe width="853" height="480" src="https://www.youtube.com/embed/WWmgV3IlAKk"
+          title="CLGT: CON LAI GI THE? | Live VJ Performance | 2025" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <h4 id="button_name">Live VJ performance @ RMIT, 2025.</h4>
     </div>
-    <h4 id="button_name">Live performance @ RMIT University Vietnam<h4>
   </div>
+
+  <div class="panel" data-color="white"
+  data-description="This was one of the most incredible experiences I’ve ever
+      had. I learned how to combine music, beats, and visuals in a cohesive way. We used Resolume for VJing, while the
+      visuals were created using Blender, After Effects, and Photoshop.
+      <br><br>
+      The concept poses a satirical question: What would be left of the world if mothers stopped warning their kids
+      about dirty street food, if all 100 million people in Vietnam owned a red or blue plastic chair, and if limbs were
+      boxed up and sold at a discount because no one needed them anymore? You're invited to count down the days… to the
+      end of the world."
+  >
+
+    <div class="item">
+      <div class="item-img">
+        <iframe width="853" height="480" src="https://www.youtube.com/embed/Z_WGAgqYybQ"
+          title="CLGT: CON LAI GI THE? | DMS3 | ARCAN | 2025" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <h4 id="button_name">Live VJ performance @ Arcan, 2025.</h4>
+    </div>
+  </div>
+
+  <div class="panel" data-color="white"
+  data-description="Flipphone design process and development."
+  data-date="2024">
+
+    <div class="item">
+      <div class="item-img">
+        <iframe title="vimeo-player" src="https://player.vimeo.com/video/1076862076?h=f10acc3093" width="640" height="360" frameborder="0" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"   allowfullscreen></iframe>
+      </div>
+      <h4 id="button_name">Full Recording</h4>
+    </div>
+  </div>
+
+  <div class="panel" data-color="violet"
+  data-description="Flipphone design process and development."
+  data-date="2024">
+    <div class="item">
+      <div class="item-img">
+        <video class="video-background" autoplay loop muted playsinline>
+          <source src="img/thoi su dolly 4.mp4" type="video/mp4" />
+        </video>
+      </div>
+      
+    </div>
+  </div>
+
+  <div class="panel" data-color="violet"
+  data-description="Flipphone design process and development."
+  data-date="2024">
+    <div class="item">
+      <div class="item-img">
+        <video class="video-background" autoplay loop muted playsinline>
+          <source src="img/via he 2.mp4" type="video/mp4" />
+        </video>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="panel" data-color="violet"
+  data-description="Flipphone design process and development."
+  data-date="2024">
+    <div class="item">
+      <div class="item-img">
+        <video class="video-background" autoplay loop muted playsinline>
+          <source src="img/ongnghiem xoay 2.mp4" type="video/mp4" />
+        </video>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel" data-color="violet">
+    <div class="item">
+      <div class="item-img">
+        <video class="video-background" autoplay loop muted playsinline>
+          <source src="img/botdien_twist.mp4" type="video/mp4" />
+        </video>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="panel" data-color="violet"
+  data-description="Event photo taken @ RMIT"
+  data-date="2024">
+
+    <div class="item">
+      <div class="item-img">
+        <img src="img/image-177.webp" alt="" />
+      </div>
+      <h4 id="button_name">Event photo taken @ RMIT</h4>
+    </div>
+  </div>
+  
+
+  <div class="panel" data-color="violet"
+  data-description="Records"
+  data-date="VJ performance @ 29th Floor Radio, 2025.">
+
+    <div class="item">
+      <div class="item-img">
+        <video class="video-background" autoplay loop muted playsinline>
+          <source src="img/29th floor 1.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <h4 id="button_name">VJ for 29th Floor Radio</h4>
+    </div>
+  </div>
+
+  <div class="panel" data-color="violet"
+  data-description="Records"
+  data-date="VJ performance @ 29th Floor Radio, 2025.">
+
+    <div class="item">
+      <div class="item-img">
+        <video class="video-background" autoplay loop muted playsinline>
+          <source src="img/29th floor 2.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <h4 id="button_name">VJ for 29th Floor Radio</h4>
+    </div>
+  </div>
+
+  <div class="panel" data-color="violet"
+  data-description="Records"
+  data-date="VJ performance @ 29th Floor Radio, 2025.">
+
+    <div class="item">
+      <div class="item-img">
+        <video class="video-background" autoplay loop muted playsinline>
+          <source src="img/29th floor 3.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <h4 id="button_name">VJ for 29th Floor Radio</h4>
+    </div>
+  </div>
+
+
+  <div class="panel" data-color="violet"
+  data-description="Records"
+  data-date="VJ performance @ VJ Mazed, 2025.">
+
+    <div class="item">
+      <div class="item-img">
+        <video class="video-background" autoplay loop muted playsinline>
+          <source src="img/Comp 4_1.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <h4 id="button_name">VJ Mazed 2025</h4>
+    </div>
+  </div>
+
+  <div class="panel" data-color="violet"
+  data-description="Records"
+  data-date="VJ performance @ VJ Mazed, 2025.">
+
+    <div class="item">
+      <div class="item-img">
+        <video class="video-background" autoplay loop muted playsinline>
+          <source src="img/Comp 1_1.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <h4 id="button_name">VJ Mazed 2025</h4>
+    </div>
+  </div>
+
+  <div class="panel" data-color="violet"
+  data-description="Records"
+  data-date="VJ performance @ VJ Mazed, 2025.">
+  
+    <div class="item">
+      <div class="item-img">
+        <video class="video-background" autoplay loop muted playsinline>
+          <source src="img/Comp 2_1.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <h4 id="button_name">VJ Mazed 2025</h4>
+    </div>
+  </div>
+
+  <div class="panel" data-color="white">
+    <div class="item">
+      <div class="item-img">
+        <iframe width="990" height="557" src="https://www.youtube.com/embed/crMSs9QXgjI"
+          title="YSLAND FULL PERFORMANCE @ RMIT University" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <h4 id="button_name">Live performance @ RMIT University Vietnam</h4>
+    </div>
+  </div>
+
+  <div class="panel" data-color="violet">
+    <div class="item">
+      <div class="item-img">
+        <video class="video-background" autoplay loop muted playsinline>
+          <source src="img/3dlag_glitch.mp4" type="video/mp4" />
+        </video>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="panel" data-color="violet">
+    <div class="item">
+      <div class="item-img">
+        <video class="video-background" autoplay loop muted playsinline>
+          <source src="img/3dlagredmirror1.mp4" type="video/mp4" />
+        </video>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="panel" data-color="violet">
+    <div class="item">
+      <div class="item-img">
+        <video class="video-background" autoplay loop muted playsinline>
+          <source src="img/housinggeometry_cam1_1.mp4" type="video/mp4" />
+        </video>
+      </div>
+    
+    </div>
+  </div>
+
+  <div class="panel" data-color="violet">
+    <div class="item">
+      <div class="item-img">
+        <img src="img/DSC07088 3.jpg" alt="" />
+      </div>
+      <h4 id="button_name">Event photo taken @ RMIT</h4>
+    </div>
+  </div>
+
 </div>
-</div>
 
 
-<!--SLIDERS-->
-<script>
-  const sliderContainer = document.getElementById('slider-container');
-
-let isDown = false;
-let startX;
-let scrollLeft;
-
-sliderContainer.addEventListener('mousedown', (e) => {
-  isDown = true;
-  sliderContainer.classList.add('active');
-  startX = e.pageX - sliderContainer.offsetLeft;
-  scrollLeft = sliderContainer.scrollLeft;
-});
-
-sliderContainer.addEventListener('mouseleave', () => {
-  isDown = false;
-  sliderContainer.classList.remove('active');
-});
-
-sliderContainer.addEventListener('mouseup', () => {
-  isDown = false;
-  sliderContainer.classList.remove('active');
-});
-
-sliderContainer.addEventListener('mousemove', (e) => {
-  if (!isDown) return;
-  e.preventDefault();
-  const x = e.pageX - sliderContainer.offsetLeft;
-  const walk = (x - startX) * 1.5; // tốc độ kéo
-  sliderContainer.scrollLeft = scrollLeft - walk;
-});
-
-
-</script>
-
-<!--========-->
-
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/intersection-observer@0.12.2/intersection-observer.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
 <script>
-    const items = Array.from(document.querySelectorAll(".item"));
+  // =========================
+  // FADE UP ANIMATION
+  // =========================
 
+  const fadeUps = document.querySelectorAll(".panel");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          anime({
+            targets: entry.target,
+            opacity: [0, 1],
+            translateY: [60, 0],
+            duration: 1200,
+            delay: index * 100,
+            easing: "easeOutExpo",
+          });
+
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.3,
+    }
+  );
+
+  fadeUps.forEach((el) => {
+    el.style.opacity = "0";
+    observer.observe(el);
+  });
+
+  // =========================
+  // SCALE EFFECT
+  // =========================
+
+  const items = document.querySelectorAll(".item");
+
+  function setScale() {
     items.forEach((item) => {
-        const img = item.querySelector(".item-img");
-        gsap.set(img, {scale:0});
+      const img = item.querySelector(".item-img");
+
+      if (!img) return;
+
+      const rect = item.getBoundingClientRect();
+
+      const viewportCenter = window.innerHeight / 2;
+      const itemCenter = rect.top + rect.height / 2;
+
+      const distance = Math.abs(viewportCenter - itemCenter);
+
+      const progress = distance / viewportCenter;
+
+      const adjustedProgress = Math.pow(progress, 2);
+
+      let scale = 1 - adjustedProgress * 0.5;
+
+      scale = Math.max(0.5, Math.min(scale, 1));
+
+      gsap.set(img, {
+        scale: scale,
+      });
     });
+  }
 
-    function setScale(){
-        items.forEach((item) => {
-            const img = item.querySelector(".item-img");
-            const rect = item.getBoundingClientRect();
+  // chạy lần đầu
+  setScale();
 
-            const viewportHeight = window.innerHeight;
-            const itemCenter = rect.top + rect.height / 2;
+  // cập nhật khi scroll
+  window.addEventListener("scroll", setScale);
 
-            const distanceFromCenter = Math.abs(viewportHeight / 2 - itemCenter);
-
-            const progress = distanceFromCenter / (viewportHeight / 2);
-
-            const adjustedProgress = Math.pow(progress, 2);
-
-            let scale = 1 - adjustedProgress * 0.5;
-            scale = Math.max(0, Math.min(scale,1));
-
-            gsap.to(img, {scale: scale, duration:0.1});
-        });
-    }
-
-    setScale();
-
-    window.addEventListener("scroll", setScale);
-    let scroll = 0;
-    let oldScrollY = 0;
-    let roundedScrollY = 0;
-    const lerpAmount = 0.1;
-
-    function lerp(start, end, t){
-        return start * (1 - t) + end * i;
-    }
-
-    function animate(){
-        requestAnimationFrame(animate);
-
-        roundedScrollY = lerp(roundedScrollY, scrollY, lerpAmount);
-
-        document.querySelector(".container").style.transform = 'translate3d(0, ${-roundedScrollY}px, 0)';
-
-        setScale();
-    }
-
-    window.addEventListener("scroll", (e) => {
-        scrollY = window.scrollY;
-    });
-
-    animate();
+  // cập nhật khi resize
+  window.addEventListener("resize", setScale);
 </script>
+
+
+<!--script>
+const descriptionBox =
+  document.getElementById("h3_mannequin");
+
+const dateBox =
+  document.getElementById("project-date");
+
+const descriptionPanels =
+  document.querySelectorAll(".panel");
+
+const descriptionObserver =
+  new IntersectionObserver(
+    (entries) => {
+
+      entries.forEach((entry) => {
+
+        if (entry.isIntersecting) {
+
+          const description =
+            entry.target.dataset.description;
+
+          const date =
+            entry.target.dataset.date;
+
+          if (description)
+            descriptionBox.innerHTML = description;
+
+          if (date)
+            dateBox.innerHTML = date;
+        }
+
+      });
+
+    },
+    {
+      threshold: 0.5
+    }
+);
+
+descriptionPanels.forEach((panel) => {
+  descriptionObserver.observe(panel);
+});
+</script-->
 
 </main>
 </body>
