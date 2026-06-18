@@ -2616,7 +2616,11 @@ footer {
 
 #link_full:hover {
     color: #adff2f;
-    padding: 0.5vw 3.5vw;
+    padding: 0.2vw 3vw;
+
+
+    border: 1px #adff2f solid;
+    background: black;
 }
 
 
